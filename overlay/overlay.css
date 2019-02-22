@@ -9,6 +9,7 @@
     text-align: center;
     position: fixed;
     z-index: 999;
+    cursor: pointer;
 }
 
 .item#glphTitle {
@@ -16,34 +17,9 @@
     top: 0px;
     width: 200px;
     height: 50px;
-    left: 50%;
+    left: 50vw;
     margin: 20px 0 0 -100px;
     font-size: 40px;
     font-weight: 700;
-    cursor: pointer;
     text-decoration: none;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-
-code {
-    font-family: 'Roboto Mono', monospace;
-}
-
-pre {
-    text-align: left;
-    background-color: #EEE;
-    padding: 0 20px;
-    border-radius: 5px;
-}
-
-@keyframes example {
-    20%  {transform: scale(0.8) rotate3d(0.7, 2, 1, 72deg)}
-    40%  {transform: scale(0.6) rotate3d(0.7, 2, 1, 144deg)}
-    50%  {transform: scale(0.5) rotate3d(0.7, 2, 1, 180deg)}
-    60%  {transform: scale(0.5) rotate3d(0.7, 2, 1, 216deg)}
-    80%  {transform: scale(0.7) rotate3d(0.7, 2, 1, 288deg)}
-    100% {transform: scale(1)   rotate3d(0.7, 2, 1, 360deg)}
 }
