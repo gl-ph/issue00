@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>The Spot</title>
+
+<!-- The Spot, Copyright (c) 2018 Nick Montfort
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved. This file is offered as-is,
+without any warranty.
+
+May 15, 2018
+
+-->
+
+	<style>
+	body { margin:0 ; overflow:hidden }
+	a { color:#eee ; text-decoration:none }
+	header { margin:0 ; padding:0 ; background-color:#222 ; color:#bbb ;
+		position:relative ; z-index:1000 }
+	header > h1 { margin:0 ; font-size:12px ; font-family:sans-serif ;
+		border-bottom:1px #999 solid ; padding:5px 10px ; line-height:17px }
+	</style>
+</head>
+<body>
+<header id=nav>
+	<h1>
+		"The Spot" by
+		<a href="http://nickm.com">Nick Montfort</a> &nbsp;
+		<!-- <a href="">&lt;&lt;</a> &mdash;
+		<a href="">&gt;&gt;</a> -->
+		<a onclick="fullscreenEvt(true);"> (Full screen) </a>
+	</h1>
+	<script>
+		function fullscreenEvt(incomingReq)
+		{
+			if(incomingReq===true||document.fullscreenElement||document.webkitIsFullScreen||
+			document.mozFullScreen||document.msFullscreenElement) {
+				var fsElt;
+				if(window.c instanceof HTMLCanvasElement) fsElt = window.c;
+				else fsElt = document.documentElement;
+				if(fsElt.webkitRequestFullScreen) fsElt.webkitRequestFullScreen();
+				else fsElt.mozRequestFullScreen();
+				document.getElementsByTagName("header")[0].style.display = "none";
+			}
+			else document.getElementsByTagName("header")[0].style.display = "block";
+			if (typeof l==="function") setTimeout(l,200);
+		}
+		document.addEventListener("mozfullscreenchange",fullscreenEvt);
+		document.addEventListener("MSFullscreenChange",fullscreenEvt);
+		document.addEventListener("fullscreenchange",fullscreenEvt);
+		document.addEventListener("webkitfullscreenchange",fullscreenEvt);
+	</script>
+</header> <!-- In composing this, the rest of the page has been limited to 1KB -->
+<canvas id=c></canvas>
+<script>
+	var i1, i2, red, d;
+	function render(t, w, h) {
+		t.fillText("X", (w/2) - 255 + Math.random() * 435, (h/2) - 255 + (Math.random() * 380) + 100);
+	}
+	function shift(t) {
+		red = red + d;
+		if (red > 191) { d = d * -1; }
+		if (red === 0) { d = d * -1; }
+		t.fillStyle = "rgb( " + red + ", 0, 0)";
+	}
+	function l() {
+		if(i1) {
+			clearInterval(i1);
+			clearInterval(i2);
+		}
+		var t, w = window.innerWidth, h = window.innerHeight - nav.offsetHeight;
+		t = c.getContext("2d");
+		c.width = w;
+		c.height = h;
+		t.fillStyle = "#fff";
+		t.fillRect(0, 0, w, h);
+		t.font = "128px monospace";
+		red = 0;
+		d = 6;
+		i1 = setInterval( function() { render(t, w, h); }, 32);
+		i2 = setInterval( function() { shift(t); }, 2048);
+	}
+	window.onload=l;
+</script>
+</body>
+</html>
