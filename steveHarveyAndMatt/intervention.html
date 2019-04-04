@@ -66,16 +66,16 @@
                                 <p><img src="assets/images/mailbox.gif"> MailBox</p>
                                 <ul id="insideList">
                                     <li>
-                                        <p><img src="assets/images/mailsOption.gif"> Inbox</p>
+                                        <p><img class="iconIMG" src="assets/images/mailsOption.gif"> Inbox</p>
                                     </li>
                                     <li>
-                                        <p><img src="assets/images/mailsOption.gif"> Outbox</p>
+                                        <p><img class="iconIMG" src="assets/images/mailsOption.gif"> Outbox</p>
                                     </li>
                                     <li>
-                                        <p><img src="assets/images/mailsOption.gif"> Sent</p>
+                                        <p><img class="iconIMG" src="assets/images/mailsOption.gif"> Sent</p>
                                     </li>
                                     <li>
-                                        <p><img src="assets/images/trash.gif"> Trash</p>
+                                        <p><img id="trashIcon" class="iconIMG" src="assets/images/trash.gif"> Trash</p>
                                     </li>
                                 </ul>
                             </li>
@@ -85,7 +85,7 @@
                         <div id="mainHeader">
                             <h3>Steve, Harvey, and Matt</h3>
                         </div>
-                        <div id="firstMail" class="email" onclick="showSelected(this)">
+                        <div id="firstMail" class="email" onclick="showSelected(this)" onmousedown="grabMail(this)">
                             <img src="assets/images/webinterface.gif">
                             <h4>From: Hessling, Michael Sent: Tue 5/9/2017 11:19:23 AM</h4>
                             <p>All right. This took me about 90 minutes to do 108 pages, and it's not going to get easier, I don't think. I've finally figured out why bulk archive
@@ -96,13 +96,13 @@
                                What's the best way to get those three files over to archive? ~Mike
                              </p>
                         </div>
-                        <div id="secondMail" class="email" onclick="showSelected(this)">
+                        <div id="secondMail" class="email" onclick="showSelected(this)" onmousedown="grabMail(this)">
                             <img src="assets/images/webinterface.gif">
                             <h4>From: Hessling, Michael Sent: Monday, May 8, 2017 4:14:48 PM</h4>
                             <p>Tomorrow morning, I will archive clean-power-plan. Tomorrow during the day, you'll want to rename the ARCHIVED clean-power-plan back to cleanpowerplan using your Perl script.~Mike
                             </p>
                         </div>
-                        <div id="thirdMail" class="email" onclick="showSelected(this)">
+                        <div id="thirdMail" class="email" onclick="showSelected(this)" onmousedown="grabMail(this)">
                           <img src="assets/images/webinterface.gif">
                           <h4>From: Freire, JP Sent: Friday, April 28, 2017 5:51 PM</h4>
                           <p>Steve, Harvey and Matt, As discussed with Nancy, we would like the content at the links below removed and archived as soon as possible.
@@ -144,6 +144,12 @@
         overlay.addContent("fun4", showFun4);
         overlay.render(color, outline);
     });
+    function showTitle(){
+
+    }
+    function hideEverything(){
+
+    }
 </script>
     </body>
 </html>

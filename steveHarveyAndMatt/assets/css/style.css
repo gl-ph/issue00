@@ -4,6 +4,18 @@ body{
     background-size: cover;
     font-family: "MS Sans-serif", sans-serif, Georgia;
 }
+*{
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+   /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+   -ms-user-select: none;
+   user-select: none;
+}
 #container{
     display: flex;
     width: 100%;
@@ -136,6 +148,13 @@ nav > li{
 }
 #insideList > li{
     list-style: none;
+}
+#insideList > li:hover .iconIMG{
+  width: 20%;
+  height: auto;
+}
+#insideList > li:hover{
+  font-weight: bold;
 }
 #mailSelect{
     display: flex;

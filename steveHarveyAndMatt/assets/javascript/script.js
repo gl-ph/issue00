@@ -46,6 +46,9 @@ var email6 = { to: "To: Hull, George Cc: Hart, Daniel Milbourn, Cathy",
                "Please call me with any questions or reply to this email. I'll be working all weekend and ready to help make this happen on time. Thank you very much! John"
              };
 
+/*
+  show email upon being clicked
+*/
 function showSelected(e){
   switch (e.id) {
     case "firstMail":
@@ -65,16 +68,57 @@ function showSelected(e){
     }
 }
 
+/*
+  loads the mail element based on param mail
+  child nodes are every other because DOM childNodes
+  includes the space in between elements
+*/
 function loadMail(mail){
   var selected = document.getElementById('selected');
-  console.log(selected.childNodes);
   selected.childNodes[1].innerHTML = mail.to;
   selected.childNodes[3].innerHTML = mail.from;
   selected.childNodes[5].innerHTML = mail.subject;
-  selected.childNodes[  7].innerHTML = mail.body;
+  selected.childNodes[7].innerHTML = mail.body;
 }
 
+/*
+  displays the dropdown menu in nav
+*/
 function displayDropdown(e){
   var selected = document.getElementsByClassName('dropdown')[0];
   selected.style.display = "block";
+}
+
+/*
+  binds an email img to mouse when mousebutton is dropdown
+  if mouse is released over the trash icon, redirect to Steve,
+  Harvey, and Matt page
+*/
+function grabMail(element){
+  makeDragIcon();
+  $(document).bind('mousemove', function(e){
+    $('#dragImg').css({
+      left: e.pageX + 5,
+      top: e.pageY
+    });
+  });
+  document.addEventListener('mouseup', function(){
+    var HOVERWIDTH = 20;
+    //determines if trashicon is being hovered over
+    if($('#trashIcon').width() >= HOVERWIDTH){
+      window.location.href = "https://epa.archive.work/";
+    }
+    $('#dragImg').remove()});
+}
+
+/*
+  creates the html image element to follow mouse
+*/
+function makeDragIcon(){
+  var $img = document.createElement('img');
+  $img.id = 'dragImg';
+  $('#main').append($img);
+  $('#dragImg').attr("src", "assets/images/webinterface.gif");
+  $('#dragImg').css({"width": '25px', "position": "absolute", "z-index": "1"});
+  $('#dragImg').css("maxWidth", "100%");
 }
