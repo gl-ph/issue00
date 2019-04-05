@@ -122,3 +122,7 @@ function makeDragIcon(){
   $('#dragImg').css({"width": '25px', "position": "absolute", "z-index": "1"});
   $('#dragImg').css("maxWidth", "100%");
 }
+
+function showTitle(){
+  hideEverything();
+}
