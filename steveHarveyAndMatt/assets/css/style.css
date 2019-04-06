@@ -4,6 +4,13 @@ body{
     background-size: cover;
     font-family: "MS Sans-serif", sans-serif, Georgia;
 }
+*{
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
 #container{
     display: flex;
     width: 100%;
@@ -136,6 +143,13 @@ nav > li{
 }
 #insideList > li{
     list-style: none;
+}
+#insideList > li:hover .iconIMG{
+  width: 20%;
+  height: auto;
+}
+#insideList > li:hover{
+  font-weight: bold;
 }
 #mailSelect{
     display: flex;

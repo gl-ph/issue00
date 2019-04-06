@@ -1,0 +1,200 @@
+body {
+    background-color: #000;
+    font-family: sans-serif;
+}
+
+img {
+    border: #FFF 5px solid;
+}
+img:hover {
+    border-color: #932036;
+    cursor: crosshair;
+}
+img.visited {
+    border-color: gold;
+}
+
+.phone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../media/phone.png) no-repeat;
+    background-size: 100% 100%;
+    width: 300px;
+    height: 647px;
+    z-index: 999;
+}
+.phone-animation {
+    animation-name: shake;
+    animation-duration: 0.2s;
+    animation-iteration-count: 3;
+}
+
+/* wraps an android icon in svg form */
+.phone-glyph {
+    width: 25px;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.header-wrapper {
+    margin: 37px 19px 0 20px;
+    height: 55px;
+}
+.header-wrapper > .phone-glyph {
+    height: 36px;
+}
+
+#header-status {
+    width: 100%;
+    height: 19px;
+}
+#header-status > img {
+    height: 12px;
+    padding-top: 2px;
+    border: none;
+    float: right;
+}
+#header-status-time {
+    float: right;
+    font-size: 11.5px;
+    padding: 2px 9px 0 0;
+}
+#header-middle {
+    width: calc(261px - 78px);
+    height: 36px;
+    display: inline-block;
+    vertical-align: top;
+}
+#header-name {
+    height: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 0 0 8px;
+}
+#header-number {
+    font-size: 10px;
+    padding: 0 0 0 8px;
+}
+
+.footer-wrapper {
+    margin: 0 15px 32px 16px;
+    height: 33px;
+}
+
+.footer-attach {
+    width: 25px;
+    height: 100%;
+    display: inline-block;
+}
+.footer-text {
+    width: 175px;
+    padding-top: 11px;
+    background: none;
+    vertical-align: top;
+    display: inline-block;
+    border: none;
+    font-size: 13px;
+}
+.footer-text:focus {
+    outline: none;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #BBB;
+    opacity: 1; /* Firefox */
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #BBB;
+}
+.footer-smile {
+    width: 25px;
+    height: 100%;
+    display: inline-block;
+}
+.footer-send {
+    width: 39px;
+    margin: 5px 0 0 4px;
+    height: 26px;
+    font-size: 10px;
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: top;
+    border: none;
+    border-radius: 15px;
+    color: #FFF;
+    background-color: #FAA820;
+}
+.footer-send:disabled {
+    background-color: #F9DDAB;
+}
+.footer-send:focus {
+    outline: none;
+}
+
+.text-wrapper {
+    height: calc(647px - 161px);
+    margin: 0 9px 0 10px;
+    padding: 0 10px 0 10px;
+    box-sizing: border-box;
+    border-top: solid 2px #EFEFEF;
+    border-bottom: solid 2px #EFEFEF;
+    overflow-y: auto;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+}
+.text-wrapper::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+
+.text {
+    background-color: #ebebeb;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    margin: 5px 0 5px 0;
+    max-width: 166px;
+    padding: 5px;
+    font-size: 12px;
+    float: left;
+    clear: both;
+    animation: fadeIn 0.8s, moveIn 1s;
+}
+.right {
+    background-color: #fdeec7;
+    border-color: #eeddae;
+    float: right;
+}
+
+@keyframes shake {
+    10% {transform: rotate(1deg);}
+    20% {transform: rotate(-1deg);}
+    30% {transform: rotate(1deg);}
+    40% {transform: rotate(-1deg);}
+    50% {transform: rotate(1deg);}
+    60% {transform: rotate(-1deg);}
+    70% {transform: rotate(1deg);}
+    80% {transform: rotate(-1deg);}
+    90% {transform: rotate(1deg);}
+}
+
+@keyframes fadeIn {
+    0%  {opacity: 0;}
+    10% {opacity: 0.10;}
+    20% {opacity: 0.20;}
+    30% {opacity: 0.30;}
+    40% {opacity: 0.40;}
+    50% {opacity: 0.50;}
+    60% {opacity: 0.60;}
+    70% {opacity: 0.70;}
+    80% {opacity: 0.80;}
+    90% {opacity: 0.90;}
+    100% {opacity: 1;}
+}
+
+@keyframes moveIn {
+    0% {transform: translate(0, 10px);}
+    100% {transform: translate(0, 0);}
+}
+

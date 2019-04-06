@@ -1,0 +1,140 @@
+const messages = [
+    {
+        text: "Lorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.",
+        isRight: false
+    },
+    {
+        text: "It's also called placeholder (or filler) text.",
+        isRight: true
+    },
+    {
+        text: "It's a convenient tool for mock-ups.",
+        isRight: false
+    },
+    {
+        text: "It helps to outline the visual elements of a document or presentation, eg typography, font, or layout.",
+        isRight: false
+    },
+    {
+        text: "Lorem ipsum is mostly a part of a Latin text",
+        isRight: true
+    },
+    {
+        text: "by Cicero",
+        isRight: false
+    },
+    {
+        text: "Its words and letters have been changed by addition or removal, so to deliberately render its content nonsensical",
+        isRight: true
+    },
+    {
+        text: "it's not genuine, correct, or comprehensible Latin anymore.",
+        isRight: false
+    },
+    {
+        text: "While lorem ipsum's still resembles classical Latin, it actually has no meaning whatsoever.",
+        isRight: false
+    },
+    {
+        text: "As Cicero's text doesn't contain the letters K, W, or Z, alien to latin, these, and others are often inserted randomly to mimic the typographic appearence of European languages, as are digraphs not to be found in the original.",
+        isRight: false
+    },
+    {
+        text: "Unsubscribe.",
+        isRight: true
+    },
+];
+
+const emojis = [
+    `😀`,
+    `😁`,
+    `😂`,
+    `🤣`,
+    `😃`,
+    `😄`,
+    `😅`,
+    `😆`,
+    `😉`,
+    `😊`,
+    `😋`,
+    `😎`,
+    `😍`,
+    `😘`,
+    `😗`,
+    `😙`,
+    `😚`,
+    `🙂`,
+    `🤗`,
+    `🤩`,
+    `🤔`,
+    `🤨`,
+    `😐`,
+    `😑`,
+    `😶`,
+    `🙄`,
+    `😏`,
+    `😣`,
+    `😥`,
+    `😮`,
+    `🤐`,
+    `😯`,
+    `😪`,
+    `😫`,
+    `😴`,
+    `😌`,
+    `😛`,
+    `😜`,
+    `😝`,
+    `🤤`,
+    `😒`,
+    `😓`,
+    `😔`,
+    `😕`,
+    `🙃`,
+    `🤑`,
+    `😲`,
+    `☹️`,
+    `🙁`,
+    `😖`,
+    `😞`,
+    `😟`,
+    `😤`,
+    `😢`,
+    `😭`,
+    `😦`,
+    `😧`,
+    `😨`,
+    `😩`,
+    `🤯`,
+    `😬`,
+    `😰`,
+    `😱`,
+    `😳`,
+    `🤪`,
+    `😵`,
+    `😡`,
+    `😠`,
+    `🤬`,
+    `😷`,
+    `🤒`,
+    `🤕`,
+    `🤢`,
+    `🤮`,
+    `🤧`,
+    `😇`,
+    `🤠`,
+    `🤡`,
+    `🤥`,
+    `🤫`,
+    `🤭`,
+    `🧐`,
+    `🤓`,
+    `😈`,
+    `👿`,
+    `👹`,
+    `👺`,
+    `💀`,
+    `👻`,
+    `👽`,
+    `🤖`,
+]
