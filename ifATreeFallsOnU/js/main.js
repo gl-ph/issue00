@@ -4,7 +4,7 @@ $(document).ready(function() {
     overlay.addContent("title", showTitle);
     overlay.addContent("interview", showInterview);
     overlay.addContent("critical", showCritical);
-    overlay.addContent("fun", function(){});
+    overlay.addContent("fun", showChat);
     
     overlay.render();
 
@@ -23,6 +23,11 @@ function showInterview() {
     initializePhone();
 }
 
+function showChat() {
+    hideEverything();
+    initializeChat();
+}
+
 function showCritical() {
     hideEverything();
     showTitle();
@@ -35,4 +40,5 @@ function showCritical() {
 function hideEverything() {
     $('img').hide();
     destroyPhone();
+    destroyChat();
 }
