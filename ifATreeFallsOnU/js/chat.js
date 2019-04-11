@@ -25,9 +25,9 @@ function sendMessage(username, messageText) {
 
 function displayMessage(name, text) {
     if (name === username) {
-        $('#chat-box').append('<div style="background:red">' + text + '</div>');
+        $('#chat-box').append('<div class="chat-self"><b>' + name + ':</b> ' + text + '</div>');
     } else {
-        $('#chat-box').append('<div>' + text + '</div>');
+        $('#chat-box').append('<div><b>' + name + ':</b> ' + text + '</div>');
     }
 }
 
@@ -44,13 +44,25 @@ function loadMessages() {
 }
 
 function initializeChat() {
+    if (username === null || username === '' || username === undefined) {
+        username = prompt('Please enter your username:', 'guest');
+
+        if (username === null || username.trim() === '') {
+            username = 'guest'; //default user is guest
+        } else {
+            username = username.trim();
+            sessionStorage.setItem('username', username);
+        }
+    }
+
     createChat();
+    initalizeDrag('chat-wrapper');
 
     loadMessages();
 
     $('#chat-input').on('keyup', function(event) {
         if(event.keyCode == 13) { // 13 = Enter Key
-            sendMessage('chris', $('#chat-input').val());
+            sendMessage(username, $('#chat-input').val());
             $('#chat-input').val('');
         }
     });
@@ -69,16 +81,51 @@ function destroyChat() {
 
 function createChat() {
     var chatWrapper = document.createElement('div');
+    var chatHeader = document.createElement('div');
     var chatBox = document.createElement('div');
     var chatInput = document.createElement('input');
+    var chatButton1 = document.createElement('img');
+    var chatPattern1 = document.createElement('div');
+    var chatTitle = document.createElement('div');
+    var chatPattern2 = document.createElement('div');
+    var chatButton2 = document.createElement('img');
+    var chatButton3 = document.createElement('img');
 
     chatWrapper.id = 'chat-wrapper';
+    chatHeader.id = 'chat-header';
     chatBox.id = 'chat-box';
     chatInput.id = 'chat-input';
     chatInput.type = 'text';
+    chatPattern1.className = 'pattern';
+    chatPattern2.className = 'pattern';
+    chatTitle.className = 'chat-title';
+    chatTitle.innerText = 'Chat';
+    chatButton1.src = 'media/button.png';
+    chatButton2.src = 'media/button.png';
+    chatButton3.src = 'media/button.png';
+    
+    // randomize starting position
+    let top = Math.floor(Math.random() * (70));
+    let left = Math.floor(Math.random() * (70));
+    chatWrapper.style.top = top + '%';
+    chatWrapper.style.left = left + '%';
 
+    chatHeader.appendChild(chatButton1);
+    chatHeader.appendChild(chatPattern1);
+    chatHeader.appendChild(chatTitle);
+    chatHeader.appendChild(chatPattern2);
+    chatHeader.appendChild(chatButton2);
+    chatHeader.appendChild(chatButton3);
+
+    chatWrapper.appendChild(chatHeader);
     chatWrapper.appendChild(chatBox);
     chatWrapper.appendChild(chatInput);
 
     document.getElementsByTagName('body')[0].appendChild(chatWrapper);
+
+    document.querySelectorAll('#chat-header > img').forEach((element) => {
+        element.addEventListener('click', function() {
+            window.overlay.callEvent('title');
+        });
+    });
 }

@@ -7,38 +7,77 @@ $(document).ready(function() {
     overlay.addContent("fun", showChat);
     
     overlay.render();
-
-    $('img').click(function() {
-        $(this).addClass('visited');
+    document.getElementById('piece-link').addEventListener('click', function() {
+        window.overlay.callEvent('critical');
+    });
+    document.getElementById('interview-link').addEventListener('click', function() {
+        window.overlay.callEvent('interview');
+    });
+    document.getElementById('chat-link').addEventListener('click', function() {
+        window.overlay.callEvent('fun');
     });
 });
 
 function showTitle() {
     hideEverything();
-    $('img').show();
 }
 
 function showInterview() {
     hideEverything();
+    document.getElementById('interview-link').classList.add('visited');
     initializePhone();
 }
 
 function showChat() {
     hideEverything();
+    document.getElementById('chat-link').classList.add('visited');
     initializeChat();
 }
 
 function showCritical() {
     hideEverything();
+    document.getElementById('piece-link').classList.add('visited');
     showTitle();
-    $('center#title').css('animation-name', 'example');
-    $('center#title').css('animation-duration', '8s');
-    $('center#title').css('animation-iteration-count', 'infinite');
-    $('center#title').css('animation-timing-function', 'linear');
 }
 
 function hideEverything() {
-    $('img').hide();
     destroyPhone();
     destroyChat();
+}
+
+function initalizeDrag(id) {
+    var mousePosition;
+    var offset = [0,0];
+    var div;
+    var isDown = false;
+
+    div = document.getElementById(id);
+
+    document.body.appendChild(div);
+
+    div.addEventListener('mousedown', function(e) {
+        isDown = true;
+        offset = [
+            div.offsetLeft - e.clientX,
+            div.offsetTop - e.clientY
+        ];
+    }, true);
+
+    document.addEventListener('mouseup', function() {
+        isDown = false;
+    }, true);
+
+    document.addEventListener('mousemove', function(event) {
+        event.preventDefault();
+        if (isDown) {
+            mousePosition = {
+        
+                x : event.clientX,
+                y : event.clientY
+        
+            };
+            div.style.left = (mousePosition.x + offset[0]) + 'px';
+            div.style.top  = (mousePosition.y + offset[1]) + 'px';
+        }
+    }, true);
 }
