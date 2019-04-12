@@ -79,7 +79,8 @@ $(function(){
 			}
 			
 			
-			if(comboArray == ""+combination){
+		//	if(comboArray == ""+combination){
+				document.getElementById("activate").addEventListener("click", () => {
 				$('.lock-dial ul').draggable('disable');
 				$('#lock-wrapper').addClass("unlocked");
 				$('.lock-dial').each(function(){
@@ -94,7 +95,7 @@ $(function(){
 						});
 					});
 				});
-			}
+			})
 		}
 	});
 
