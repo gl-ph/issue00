@@ -3,8 +3,8 @@ body{
     font-family: 'Times New Roman', Times, serif;
 }
 .question{
-    width: 70vw;
-    margin: auto;
+    width: 80%;
+    margin: 10%;
     text-align: center;
     color: whitesmoke;
     font-size: 34px;
@@ -14,4 +14,26 @@ body{
     font-size: 30px;
     background-color: black;
     color: antiquewhite;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-column-gap: 5%;
+}
+
+.grid-item {
+    min-height: 580px;
+    max-height: 1000px;
+    text-align: center;
+}
+
+textarea{
+    padding: 0%;
+    width: 100%;
+    resize: none;
+    min-height: inherit;
+    max-height: 860px;
+    height: 60%;
+
 }
