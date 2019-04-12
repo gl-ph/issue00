@@ -29,6 +29,9 @@ function displayMessage(name, text) {
     } else {
         $('#chat-box').append('<div><b>' + name + ':</b> ' + text + '</div>');
     }
+
+    div = document.getElementById('chat-box'); // have to reload the object
+    div.scrollTop = parseInt(div.scrollHeight);
 }
 
 function loadMessages() {
