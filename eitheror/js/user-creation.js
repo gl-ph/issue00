@@ -77,6 +77,7 @@ function addElementToTheList(){
 
 addElementToTheList();
 
+//Brandon Dcruz's code from here
 //An array of all the arrays of texts
 let allTexts = [eitherTexts, slashTexts, orTexts];
 //Array of possible starting words
