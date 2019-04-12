@@ -81,21 +81,31 @@ $(function(){
 			
 		//	if(comboArray == ""+combination){
 				document.getElementById("activate").addEventListener("click", () => {
-				$('.lock-dial ul').draggable('disable');
-				$('#lock-wrapper').addClass("unlocked");
-				$('.lock-dial').each(function(){
-					var $this = $(this);
-					$this.find('ul').delay(400).css('color', '#0f0').fadeOut(function(){
-						$this.animate({
-							marginTop: 150
-						}, function(){
-							$this.fadeOut(function(){
-								$('.welcome-message').fadeIn();
+					$('.lock-dial ul').draggable('disable');
+					$('#lock-wrapper').addClass("unlocked");
+					$('.lock-dial').each(function(){
+						var $this = $(this);
+						$this.find('ul').delay(400).css('color', '#0f0').fadeOut(function(){
+							$this.animate({
+								marginTop: 150
+							}, function(){
+								$this.fadeOut(function(){
+									$('.welcome-message').fadeIn(function(){ //callback to this function, not presently working
+										//grab the current letter, open the corresponding page
+										let selectedLetter = $(this).find('li:nth-last-child(2)').text();
+										console.log(selectedLetter);
+										switch(selectedLetter){
+											case "b":
+												console.log(selectedLetter);
+												window.open("../piece/b_construction.html").focus();
+												break;
+										}
+									});
+								});
 							});
 						});
-					});
+					})
 				});
-			})
 		}
 	});
 
