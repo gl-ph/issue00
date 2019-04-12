@@ -1,0 +1,17 @@
+body{
+    background-color:  black;
+    font-family: 'Times New Roman', Times, serif;
+}
+.question{
+    width: 70vw;
+    margin: auto;
+    text-align: center;
+    color: whitesmoke;
+    font-size: 34px;
+  }
+
+#submit{
+    font-size: 30px;
+    background-color: black;
+    color: antiquewhite;
+}
