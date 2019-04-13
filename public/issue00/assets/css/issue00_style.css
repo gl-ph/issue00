@@ -21,6 +21,17 @@ body {
     padding-top: 5px;
 }
 
+#issue p{
+    color:red;
+    text-decoration: underline;
+}
+
+#issue p:hover{
+    color:blue;
+    cursor:pointer;
+    text-decoration-style: wavy;
+}
+
 #wrap{
     display:grid;
     grid-template-columns:repeat(5, .3fr 1fr);
@@ -125,3 +136,31 @@ a:visited {
     grid-row:5/6;
     grid-column:6/9;
 }
+
+#back{
+    grid-row:5/6;
+    grid-column:1/2;
+    color:red;
+}
+
+#back:hover{
+   cursor:pointer;
+    color:blue;
+}
+
+
+
+#editor{
+    z-index:99;
+    display:none;
+    height:100vh;
+    width:100vw;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color:rgb(47, 47, 48, .95);
+    font-size:.5em;
+    color:white;
+    padding:1em;
+}
+
