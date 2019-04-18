@@ -1,7 +1,4 @@
 $(function(){
-
-	// var comboArray = ['O', 'O', 'O', 'O', 'O'];
-    // var combination = ['B', 'I', 'L', 'O', 'X'];
     var letters = ['B', 'I', 'L', 'O', 'X'];
 	
 	var gridIncrement = $( ".lock-dial ul" ).css('line-height').replace('px', '')/2;
@@ -29,16 +26,9 @@ $(function(){
 				$(this).append('<li>'+nextLetter+'</li>');
 				console.log($(this).eq(2).text());
 				$(".lock-dial ul:eq(5)" ).remove();
-				// var curNum = parseInt($(this).find('li:last-child').text()) + 1;
-				// if(curNum < 10){
-				// 	$(this).append('<li>'+curNum+'</li>');
-				// }else{
-				// 	$(this).append('<li>0</li>');
-				// };
 			}else{
                 var curLetter = $(this).find('li:first-child').text();
                 var letterIndex = letters.indexOf(curLetter);
-                // var curNum = parseInt($(this).find('li:first-child').text()) - 1;
 				var thisTop = parseInt($(this).css('margin-top').replace('px', ''));
 				
 				$(this).css({
@@ -52,16 +42,9 @@ $(function(){
                     nextLetter = letters[4]
                 }
                 $(this).prepend('<li>'+nextLetter+'</li>');
-                
-				// if(curNum > -1){
-				// 	$(this).prepend('<li>'+curNum+'</li>');
-				// }else{
-				// 	$(this).prepend('<li>9</li>');
-				// };
 			};
 		},
 		stop: function(){
-		
 			//MATHS		
 			var negOrPos = $(this).css('margin-top').replace('px', '') > 0 ? 1 : -1;
 			var thisTopTotal = parseInt($(this).css('top').replace('px', '')) + Math.abs(initTop);
@@ -70,7 +53,7 @@ $(function(){
 			var totalDif = numIncs*(halfHeight*2);
 			var topTen = (marginMinified - totalDif)*negOrPos;
 			var activeIndex = Math.abs(topTen/(gridIncrement*2)) + (halfHeight/(gridIncrement*2));
-			var facingLetter  = $(this).find('li').eq(activeIndex).text() //THIS IS THE FACING LETTER
+			var facingLetter  = $(this).find('li').eq(activeIndex).text() //grab the current letter
 				document.getElementById("activate").addEventListener("click", () => {
 					if(facingLetter){
 						$('.lock-dial ul').draggable('disable');
@@ -82,26 +65,39 @@ $(function(){
 									marginTop: 150
 								}, function(){
 									$this.fadeOut(function(){
-										$('.welcome-message').fadeIn(function(){ //callback to this function, not presently working
-											//grab the current letter, open the corresponding page
-											console.log(`Facing letter: ${facingLetter}`);
-											switch(facingLetter){
-												case "B":
-													console.log(facingLetter);
-													window.open("../piece/b_construction.html").focus();
-													break;
-												case "I":
-													console.log(facingLetter);
-													window.open("../piece/i_attitudes_compound.html").focus();
-												case "L":
-													window.open("../piece/l_typing_her.html").focus();
-												case "O":
-													window.open("../piece/o_right_around.html").focus();
-												case "X":
-													window.open("../piece/x_the_spot.html").focus();
-												default:
-													console.log(facingLetter);
-											}
+										var linkToPiece; 
+										var pieceName;
+										switch(facingLetter){
+											case "B":
+												linkToPiece = "../piece/b_construction.html";
+												pieceName = "B_Construction";
+												break;
+											case "I":
+												linkToPiece = "../piece/i_attitudes_compound.html";
+												pieceName = "I_Attitudes_Compound";
+												break;
+											case "L":
+												linkToPiece = "../piece/l_typing_her.html";
+												pieceName = "L_Typing_Her";
+												break;
+											case "O":
+												linkToPiece = "../piece/o_right_around.html";
+												pieceName = "O_Right_Around";
+												break;
+											case "X":
+												linkToPiece = "../piece/x_the_spot.html";
+												pieceName = "X_The_Spot";
+												break;
+											default:
+												break;
+										}
+										$('.welcome-message').html(pieceName); //set fade in message to title of piece
+										$('.welcome-message').fadeIn(function(){ 
+											setTimeout(() => {
+												location.reload(); //Refresh page in background, allowing new selection upon return
+											}, 400);
+											//open the corresponding page
+											window.open(linkToPiece).focus();
 										});
 									});
 								});
