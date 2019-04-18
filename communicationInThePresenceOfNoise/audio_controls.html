@@ -1,0 +1,49 @@
+<html>
+    <head>
+		<title>gl-ph</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+        <!-- Test of multiple audio files playing at once with volume controls -->
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                let sound1, sound2;
+
+                $('button').on('click', function() {
+                    sound1  = new Audio();
+                    sound1.loop = true;
+                    var src1  = document.createElement("source");
+                    src1.type = "audio/mp3";
+                    src1.src  = "audio1.mp3";
+                    sound1.appendChild(src1);
+
+                    sound2  = new Audio();
+                    sound2.loop = true;
+                    var src2  = document.createElement("source");
+                    src2.type = "audio/mp3";
+                    src2.src  = "audio2.mp3";
+                    sound2.appendChild(src2);
+
+                    sound1.play().catch((ex) => {console.error(ex)});
+                    sound2.play().catch((ex) => {console.error(ex)});
+                });
+
+                document.getElementById('volume1').addEventListener('change', function () {
+                    sound1.volume = document.getElementById('volume1').value / 100;
+                });
+
+                document.getElementById('volume2').addEventListener('change', function () {
+                    sound2.volume = document.getElementById('volume2').value / 100;
+                });
+            })
+        </script>
+	</head>
+	<body>
+        <button>PLAY</button>
+        <input type="range" min="0" max="100" value="50" id="volume1">
+        <input type="range" min="0" max="100" value="50" id="volume2">
+    </body>
+</html>
