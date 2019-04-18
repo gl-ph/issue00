@@ -1,7 +1,7 @@
 $(function(){
 
-	var comboArray = ['O', 'O', 'O', 'O', 'O'];
-    var combination = ['B', 'I', 'L', 'O', 'X'];
+	// var comboArray = ['O', 'O', 'O', 'O', 'O'];
+    // var combination = ['B', 'I', 'L', 'O', 'X'];
     var letters = ['B', 'I', 'L', 'O', 'X'];
 	
 	var gridIncrement = $( ".lock-dial ul" ).css('line-height').replace('px', '')/2;
@@ -26,7 +26,9 @@ $(function(){
                 }else{
                     nextLetter = letters[0]
                 }
-                $(this).append('<li>'+nextLetter+'</li>');
+				$(this).append('<li>'+nextLetter+'</li>');
+				console.log($(this).eq(2).text());
+				$(".lock-dial ul:eq(5)" ).remove();
 				// var curNum = parseInt($(this).find('li:last-child').text()) + 1;
 				// if(curNum < 10){
 				// 	$(this).append('<li>'+curNum+'</li>');
@@ -68,43 +70,44 @@ $(function(){
 			var totalDif = numIncs*(halfHeight*2);
 			var topTen = (marginMinified - totalDif)*negOrPos;
 			var activeIndex = Math.abs(topTen/(gridIncrement*2)) + (halfHeight/(gridIncrement*2));
-			
-			$(this).attr("data-combo-num", $(this).find('li').eq(activeIndex).text()).css({
-				top: -315,
-				marginTop: topTen
-			}).find('li').slice(20).remove();
-			
-			for(var i=0; i<$( ".lock-dial ul" ).length; i++){
-				comboArray[i] = $( ".lock-dial ul:eq("+i+")" ).attr("data-combo-num");
-			}
-			
-			
-		//	if(comboArray == ""+combination){
+			var facingLetter  = $(this).find('li').eq(activeIndex).text() //THIS IS THE FACING LETTER
 				document.getElementById("activate").addEventListener("click", () => {
-					$('.lock-dial ul').draggable('disable');
-					$('#lock-wrapper').addClass("unlocked");
-					$('.lock-dial').each(function(){
-						var $this = $(this);
-						$this.find('ul').delay(400).css('color', '#0f0').fadeOut(function(){
-							$this.animate({
-								marginTop: 150
-							}, function(){
-								$this.fadeOut(function(){
-									$('.welcome-message').fadeIn(function(){ //callback to this function, not presently working
-										//grab the current letter, open the corresponding page
-										let selectedLetter = $(this).find('li:nth-last-child(2)').text();
-										console.log(selectedLetter);
-										switch(selectedLetter){
-											case "b":
-												console.log(selectedLetter);
-												window.open("../piece/b_construction.html").focus();
-												break;
-										}
+					if(facingLetter){
+						$('.lock-dial ul').draggable('disable');
+						$('#lock-wrapper').addClass("unlocked");
+						$('.lock-dial').each(function(){
+							var $this = $(this);
+							$this.find('ul').delay(400).css('color', '#0f0').fadeOut(function(){
+								$this.animate({
+									marginTop: 150
+								}, function(){
+									$this.fadeOut(function(){
+										$('.welcome-message').fadeIn(function(){ //callback to this function, not presently working
+											//grab the current letter, open the corresponding page
+											console.log(`Facing letter: ${facingLetter}`);
+											switch(facingLetter){
+												case "B":
+													console.log(facingLetter);
+													window.open("../piece/b_construction.html").focus();
+													break;
+												case "I":
+													console.log(facingLetter);
+													window.open("../piece/i_attitudes_compound.html").focus();
+												case "L":
+													window.open("../piece/l_typing_her.html").focus();
+												case "O":
+													window.open("../piece/o_right_around.html").focus();
+												case "X":
+													window.open("../piece/x_the_spot.html").focus();
+												default:
+													console.log(facingLetter);
+											}
+										});
 									});
 								});
 							});
 						});
-					})
+					}
 				});
 		}
 	});
