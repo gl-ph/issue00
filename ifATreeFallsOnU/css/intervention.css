@@ -3,10 +3,10 @@ body {
     font-family: sans-serif;
 }
 
-img {
+img.gif {
     border: #FFF 5px solid;
 }
-img:hover {
+img.gif:hover {
     border-color: #932036;
     cursor: crosshair;
 }
@@ -14,7 +14,7 @@ img.visited {
     border-color: gold;
 }
 
-.phone {
+#phone {
     position: absolute;
     top: 0;
     left: 0;
@@ -135,7 +135,7 @@ img.visited {
 .text-wrapper {
     height: calc(647px - 161px);
     margin: 0 9px 0 10px;
-    padding: 0 10px 0 10px;
+    padding: 0 10px 10px 10px;
     box-sizing: border-box;
     border-top: solid 2px #EFEFEF;
     border-bottom: solid 2px #EFEFEF;
@@ -198,3 +198,72 @@ img.visited {
     100% {transform: translate(0, 0);}
 }
 
+#chat-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background:#CECECE;
+    padding: 7px;
+    width: 500px;
+    font-family: 'Roboto Mono', monospace;
+    border: 1px outset;
+    box-sizing: border-box;
+}
+
+#chat-header {
+    width: 100%;
+    height: 17px;
+    margin-bottom: 7px;
+}
+#chat-header > img {
+    cursor: pointer;
+}
+#chat-header > img:nth-of-type(2) {
+    padding-right: 7px;
+}
+#chat-header > div.pattern {
+    width: 170px;
+    height: 16px;
+    margin: 0 7px 1px 7px;
+    display: inline-block;
+    background-image: url('../media/chat-pattern.png');
+}
+#chat-header > div.chat-title {
+    width: 58px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    font-size: 12px;
+}
+
+#chat-box {
+    width: 100%;
+    height: 365px;
+    background-color: white;
+    margin: 0 0 7px 0;
+    box-sizing: border-box;
+    padding: 7px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid black;
+}
+#chat-box > div {
+    padding-bottom: 3px;
+}
+#chat-box > div.chat-self {
+    opacity: 0.5;
+}
+
+#chat-input {
+    width: 100%;
+    background: white;
+    border: 1px solid black;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+    padding: 5px;
+}
+#chat-input:focus {
+    outline: none;
+}

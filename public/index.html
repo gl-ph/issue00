@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>gl-ph</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="chance.min.js" charset="utf-8"></script>
+        <script src="grain.min.js" charset="utf-8"></script>
+        <script src="main.js" charset="utf-8"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115904814-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-115904814-1');
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <div class="title_header">
+                <p id="title_ch_0">g</p>
+                <p id="title_ch_1">l</p>
+                <p id="title_sp"  >-</p>
+                <p id="title_ch_2">p</p>
+                <p id="title_ch_3">h</p>
+            </div>
+            <div class="menu_header">
+                <div id="mb_cont" class="menu_button_cont">
+                    <p id="home_mb"   >-</p>
+                    <p id="about_mb"  >*</p>
+                    <p id="dig_lit_mb">!</p>
+                    <p id="submit_mb" >+</p>
+                    <p id="faq_mb"    >~</p>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="section_scroll" class="section_cont">
+                <section id="home_sec" class="light home_sec">
+                    <canvas id="homeCanv"></canvas>
+                </section>
+                <section id ="issue_sec" class ="issue_sec light">
+                    <p><a href ="issue00/issue00.html"> ISSUE 00 - SOURCE</a></p>
+                </section>
+                <section id="about_sec" class="dark about_sec">
+                    <p id="aboutBGLetter">?</p>
+                    <div id="about_sec_title" class="sec_title">
+                        <p>WHO WE ARE</p>
+                    </div>
+                    <div class="about_input_cont">
+                        <textarea spellcheck="false" id="about_input" autofocus></textarea>
+                    </div>
+                </section>
+                <section id="dig_lit_sec" class="dark dig_lit_sec">
+                    <div id="about_dig_lit_title" class="sec_title">
+                        <p>DIGITAL LITERATURE</p>
+                    </div>
+                    <div class="about_dig_lit_content">
+                        <p class="digLitAnimSection">Loosely defined, digital literature uses code and digital media (think hyperlinks, mouse movements, or algorithm-based text generation) to build literature that engages the reader/viewer/player in <span id="digLitStartText">innovative and surprising</span> ways. That’s where gl-ph comes in: to display and promote work that a print journal (such as RIT’s own Signatures literary and art magazine) can’t capture.</p>
+                    </div>
+                </section>
+
+                <section id="submit_sec" class="dark submit_sec mobile">
+                    <p>PLEASE USE A NON-MOBILE DEVICE TO SUBMIT YOUR WORK</p>
+                </section>
+                <section id="faq_sec" class="light faq_sec">
+                    <div id="faq_title" class="sec_title">
+                        <p>FAQ</p>
+                    </div>
+                </section>
+                <footer class="dark">
+                    <div>
+                        <p>email us: <a href="mailto:glphteam@gmail.com">glphteam@gmail.com</a></p>
+                    </div>
+                    <div>
+                        <p id="footertext">designed and developed by <a target="_blank" href="https://samkilg.us/">Samuel Kilgus</a> & <span id="footerTeamButton">Team</span></p>
+                        <p id="teamlist" class="teamlist"><a target="_blank" href="https://github.com/ar2126">Aidan Rubenstein</a>&nbsp;-&nbsp;<a target="_blank" href="https://github.com/ekliot">Elijah Kliot</a>&nbsp;-&nbsp;<a target="_blank" href="https://github.com/ascalva">Alberto Serano</a></p>
+                    </div>
+                </footer>
+            </div>
+        </main>
+        <div id="loading_overlay" class="loading_overlay"></div>
+    </body>
+</html>

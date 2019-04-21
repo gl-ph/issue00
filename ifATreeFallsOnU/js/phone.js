@@ -2,14 +2,19 @@
 
 function initializePhone() {
     createPhone();
-    initalizeDrag();
+    initalizeDrag('phone');
 
     addText(messages[0].text, messages[0].isRight);
 
     let pos = 1;
     let postMessage = function() {
+        if (!document.getElementById('phone')) {
+            clearInterval(messageTimer);
+            return;
+        }
+
         addText(messages[pos].text, messages[pos].isRight);
-        pos++
+        pos++;
         if (pos >= messages.length) {
             clearInterval(messageTimer);
         }
@@ -67,8 +72,8 @@ function initializePhone() {
 }
 
 function destroyPhone() {
-    let element = document.getElementsByClassName('phone')[0];
-    if (element !== undefined) {
+    let element = document.getElementById('phone');
+    if (element) {
         element.parentNode.removeChild(element);
     }
 }
@@ -76,7 +81,7 @@ function destroyPhone() {
 function addText(text, isRight) {
     if (!isRight) {
         // this will run the animation again
-        let element = document.getElementsByClassName('phone')[0];
+        let element = document.getElementById('phone');
         element.classList.remove("phone-animation");
         void element.offsetWidth;
         element.classList.add("phone-animation");
@@ -93,44 +98,9 @@ function addText(text, isRight) {
     }
 
     div.appendChild(textDiv);
-}
 
-function initalizeDrag() {
-    // drag phone
-    var mousePosition;
-    var offset = [0,0];
-    var div;
-    var isDown = false;
-
-    div = document.getElementsByClassName('phone')[0];
-
-    document.body.appendChild(div);
-
-    div.addEventListener('mousedown', function(e) {
-        isDown = true;
-        offset = [
-            div.offsetLeft - e.clientX,
-            div.offsetTop - e.clientY
-        ];
-    }, true);
-
-    document.addEventListener('mouseup', function() {
-        isDown = false;
-    }, true);
-
-    document.addEventListener('mousemove', function(event) {
-        event.preventDefault();
-        if (isDown) {
-            mousePosition = {
-        
-                x : event.clientX,
-                y : event.clientY
-        
-            };
-            div.style.left = (mousePosition.x + offset[0]) + 'px';
-            div.style.top  = (mousePosition.y + offset[1]) + 'px';
-        }
-    }, true);
+    div = document.getElementsByClassName('text-wrapper')[0]; // have to reload the object
+    div.scrollTop = parseInt(div.scrollHeight);
 }
 
 function createPhone() {
@@ -160,10 +130,16 @@ function createPhone() {
     var footerSmile = document.createElement("div");
     var footerSend = document.createElement("button");
 
-    phoneDiv.className = 'phone';
+    phoneDiv.id = 'phone';
     headerDiv.className = 'header-wrapper';
     textDiv.className = 'text-wrapper';
     footerDiv.className = 'footer-wrapper';
+
+    // randomize starting position
+    let top = Math.floor(Math.random() * (70));
+    let left = Math.floor(Math.random() * (70));
+    phoneDiv.style.top = top + '%';
+    phoneDiv.style.left = left + '%';
 
     headerStatus.id = 'header-status';
     headerStatusTime.id = 'header-status-time';

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <title>Your Own Personal Creation</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/user-interface-styles.css" rel="stylesheet">
+</head>
+<body>
+    
+  <div class = "question">
+      <form action="creation.html" id="form" method="POST">
+
+          <div class="grid-container">
+
+              <div class="grid-item">
+                   <label for="either"><p> EITHER</p></label>
+                   <textarea id="either" name="either" placeholder="Enter any thoughts..." style="widows: 100%"></textarea>
+                </div>
+
+                <div class="grid-item">
+                  <label for="slash"><p>SLASH</p></label>
+                  <textarea id="slash" name="slash" placeholder="Enter any thoughts..." style="widows: 100%"></textarea>
+                </div>
+
+                <div class="grid-item">
+                    <label for="or"><p>OR</p></label>
+                    <textarea id="or" name="or" placeholder="Enter any thoughts..." style="widows: 100%"></textarea>
+                </div>
+
+          </div>
+
+    <br>
+    <br>
+          <input id="submit" type="submit" value="Submit" onclick="storeInput()">
+      </form>
+
+	</div>
+	
+    <script src="js/user-creation.js"></script>
+</body>
+</html>
