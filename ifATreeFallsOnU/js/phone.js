@@ -2,7 +2,7 @@
 
 function initializePhone() {
     createPhone();
-    initalizeDrag('phone');
+    initializeDrag('phone');
 
     addText(messages[0].text, messages[0].isRight);
 

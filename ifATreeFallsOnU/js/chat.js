@@ -59,7 +59,7 @@ function initializeChat() {
     }
 
     createChat();
-    initalizeDrag('chat-wrapper');
+    initializeDrag('chat-wrapper');
 
     loadMessages();
 
