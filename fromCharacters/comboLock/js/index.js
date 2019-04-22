@@ -25,9 +25,9 @@ $(function(){
 					// $(this).first().remove();
                 }
 				$(this).append('<li>'+nextLetter+'</li>');
-				while($(".lock-dial ul li").length > 5){
-					$(this).first().remove();
-				}
+				// while($(".lock-dial ul li").length > 5){
+				// 	$(this).first().remove();
+				// }
 				
 				// $(".lock-dial ul:eq(5)" ).remove();
 			}else{
