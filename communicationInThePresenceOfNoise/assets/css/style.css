@@ -1,0 +1,52 @@
+body{
+    margin: 5%;
+}
+#main{
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    position: relative;
+}
+#radio{
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+
+}
+.knob1{
+    position: absolute;
+    top: 57%;
+    left: 8%;
+    width: 40%;
+}
+.slider{
+    position: absolute;
+    top: 62%;
+    left: 17.5%;
+    width: 65%;
+}
+.button1{
+    position: absolute;
+    top: 77%;
+    left: 44%;
+    width: 25%;
+}
+.button2{
+    position: absolute;
+    top: 77%;
+    left: 37%;
+    width: 25%;
+}
+.button3{
+    position: absolute;
+    top: 77%;
+    left: 30%;
+    width: 25%;
+}
+.knob2{
+    position: absolute;
+    top: 57%;
+    right: 8%;
+    width: 40%;
+
+}

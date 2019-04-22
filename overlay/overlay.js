@@ -7,14 +7,13 @@ const glphTitle = `<a class="item" id="glphTitle" href="https://gl-ph.com">gl-ph
 
 // stores the mapping of content type to its glyph
 let typeModels = {
-    "title": {char: "*", id: "#glyph1", event: null, callback: null},
-    "interview": {char: "+", id: "", event: null, callback: null},
+    "title": {char: "~", id: "#glyph1", event: null, callback: null},
+    "interview": {char: '"', id: "", event: null, callback: null},
     "critical": {char: "&amp;", id: "", event: null, callback: null},
-    "extra": {char: "~", id: "#glyph4", event: null, callback: null},
-    "fun": {char: "!", id: "", event: null, callback: null},
-    "fun2": {char: "#", id: "", event: null, callback: null},
-    "fun3": {char: "=", id: "", event: null, callback: null},
-    "fun4": {char: "?", id: "", event: null, callback: null},
+    "extra": {char: "*", id: "#glyph4", event: null, callback: null},
+    "misc": {char: "&#8253;", id: "", event: null, callback: null},
+    "foreward": {char: ":", id: "", event: null, callback: null},
+    "review": {char: "@", id: "", event: null, callback: null},
 };
 
 class Overlay {
