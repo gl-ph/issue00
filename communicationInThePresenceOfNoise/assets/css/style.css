@@ -21,15 +21,27 @@ body{
 }
 .slider{
     position: absolute;
-    top: 58%;
+    top: 62%;
     left: 17.5%;
     width: 65%;
 }
-.button{
+.button1{
     position: absolute;
-    top: 75%;
-    left: 35%;
-    width: 30%;
+    top: 77%;
+    left: 44%;
+    width: 25%;
+}
+.button2{
+    position: absolute;
+    top: 77%;
+    left: 37%;
+    width: 25%;
+}
+.button3{
+    position: absolute;
+    top: 77%;
+    left: 30%;
+    width: 25%;
 }
 .knob2{
     position: absolute;

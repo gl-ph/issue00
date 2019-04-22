@@ -58,6 +58,9 @@ nav > li{
 #firstDrop{
   border-left: none;
 }
+#firstDrop > li > a{
+  text-decoration: none;
+}
 .dropContent > li:hover{
   background-color: grey;
 }
