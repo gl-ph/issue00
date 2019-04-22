@@ -21,11 +21,15 @@ $(function(){
                 if(letterIndex < 4){
                     nextLetter = letters[letterIndex + 1]
                 }else{
-                    nextLetter = letters[0]
+					nextLetter = letters[0];
+					// $(this).first().remove();
                 }
 				$(this).append('<li>'+nextLetter+'</li>');
-				console.log($(this).eq(2).text());
-				$(".lock-dial ul:eq(5)" ).remove();
+				while($(".lock-dial ul li").length > 5){
+					$(this).first().remove();
+				}
+				
+				// $(".lock-dial ul:eq(5)" ).remove();
 			}else{
                 var curLetter = $(this).find('li:first-child').text();
                 var letterIndex = letters.indexOf(curLetter);
@@ -41,7 +45,8 @@ $(function(){
                 }else{
                     nextLetter = letters[4]
                 }
-                $(this).prepend('<li>'+nextLetter+'</li>');
+				$(this).prepend('<li>'+nextLetter+'</li>');
+				console.log($(".lock-dial ul").length);
 			};
 		},
 		stop: function(){
