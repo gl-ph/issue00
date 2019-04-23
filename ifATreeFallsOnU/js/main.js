@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    window.overlay = new Overlay(4, 'white', 'black');
+    window.overlay = new Overlay(3, 'white', 'black');
     
     overlay.addContent("title", showTitle);
     overlay.addContent("interview", showInterview);
@@ -136,7 +136,7 @@ function createPopup() {
     popup.appendChild(document.createTextNode('if a tree falls on u'));
     popup.appendChild(document.createElement('br'));
     popup.appendChild(document.createElement('br'));
-    popup.appendChild(document.createTextNode('Brandon Dcruz'));
+    popup.appendChild(document.createTextNode('by Brandon Dcruz'));
     popup.appendChild(document.createElement('br'));
     popup.appendChild(document.createElement('br'));
     popup.appendChild(viewButton);
