@@ -23,34 +23,54 @@ $(document).ready(function() {
 });
 
 function showTitle() {
-    // hideEverything();
-    document.getElementById('popup').style.zIndex = 999;
-    document.getElementById('phone').style.zIndex = 998;
-    document.getElementById('chat-wrapper').style.zIndex = 997;
+    if (document.getElementById('popup') !== null) {
+        document.getElementById('popup').style.zIndex = 999;
+    } else {
+        createPopup();
+        document.getElementById('popup').style.zIndex = 999;
+    }
+    if (document.getElementById('phone') !== null) {
+        document.getElementById('phone').style.zIndex = 998;
+    }
+    if (document.getElementById('chat-wrapper') !== null) {
+        document.getElementById('chat-wrapper').style.zIndex = 997;
+    }
 }
 
 function showInterview() {
-    // hideEverything();
-    // document.getElementById('interview-link').classList.add('visited');
-    // initializePhone();
-    document.getElementById('popup').style.zIndex = 998;
-    document.getElementById('phone').style.zIndex = 999;
-    document.getElementById('chat-wrapper').style.zIndex = 997;
+    if (document.getElementById('popup') !== null) {
+        document.getElementById('popup').style.zIndex = 998;
+    }
+    if (document.getElementById('phone') !== null) {
+        document.getElementById('phone').style.zIndex = 999;
+    } else {
+        initializePhone();
+        document.getElementById('phone').style.zIndex = 999;
+    }
+    if (document.getElementById('chat-wrapper') !== null) {
+        document.getElementById('chat-wrapper').style.zIndex = 997;
+    }
 }
 
 function showChat() {
-    // hideEverything();
-    // document.getElementById('chat-link').classList.add('visited');
-    // initializeChat();
-    document.getElementById('popup').style.zIndex = 997;
-    document.getElementById('phone').style.zIndex = 998;
-    document.getElementById('chat-wrapper').style.zIndex = 999;
+    if (document.getElementById('popup') !== null) {
+        document.getElementById('popup').style.zIndex = 997;
+    }
+    if (document.getElementById('phone') !== null) {
+        document.getElementById('phone').style.zIndex = 998;
+    }
+    if (document.getElementById('chat-wrapper') !== null) {
+        document.getElementById('chat-wrapper').style.zIndex = 999;
+    } else {
+        initializeChat();
+        document.getElementById('chat-wrapper').style.zIndex = 999;
+    }
 }
 
-function hideEverything() {
-    destroyPhone();
-    destroyChat();
-}
+// function hideEverything() {
+//     destroyPhone();
+//     destroyChat();
+// }
 
 function initializeDrag(id) {
     var mousePosition;
