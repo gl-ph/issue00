@@ -1,0 +1,92 @@
+body{
+    width:80vw;
+    margin:0 auto;
+    overflow: hidden;
+    font-family: 'Roboto Mono', monospace;
+    background-color: rgba(191, 191, 191, 0.2);
+}
+
+#maker h1{
+    text-align:center;
+    font-size:2em;
+}
+
+#eitherOr h2{
+    border-bottom:5px solid black;
+}
+
+#maker_options{
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+}
+
+.options{
+    background-color:white;
+    border-radius:20px;
+    padding:1em;
+    
+    
+}
+
+#maker_send h2{
+    padding-top:2em;
+    border-bottom:5px solid black;
+}
+
+button{
+    display: block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    text-decoration: none;
+    border-radius:5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#eitherOr button{
+    background-color:black;
+    border:5px solid black;
+    width:50%;
+}
+
+#eitherOr button:hover{
+    background-color:white;
+}
+
+#eitherOr button:hover >a{
+    color:black;
+}
+
+#eitherOr{
+    margin-bottom:2em;
+}
+
+button a{
+    color:white;
+    text-decoration: none;
+}
+
+#maker_left{
+    box-shadow: 4px 4px red;
+}
+
+#maker_left button{
+    background-color:red;
+}
+
+#maker_right{
+    box-shadow: 4px 4px blue;
+}
+
+#maker_right button{
+    background-color:blue;
+}
+
