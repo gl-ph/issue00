@@ -1,24 +1,61 @@
 body{
     background-color:  black;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Roboto Mono', monospace;
 }
 .question{
     width: 80%;
     margin: 10%;
     text-align: center;
     color: whitesmoke;
-    font-size: 34px;
   }
 
+.grid-container{
+    font-size:2em;
+}
+
+.question a{
+    color:lightgoldenrodyellow;
+}
+
+/*
 #submit{
     font-size: 30px;
     background-color: black;
     color: antiquewhite;
 }
+*/
+
+.question p{
+    font-size:1em;
+}
+
+#submit{
+    display: block;
+    border: 3px solid white;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    text-decoration: none;
+    border-radius:5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-family: 'Roboto Mono', monospace;
+    font-size:1.5em;
+}
+
+#submit:hover{
+    border-color:white;
+    background-color:black;
+    color:white;
+}
 
 .grid-container {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 5%;
 }
 
@@ -36,4 +73,31 @@ textarea{
     max-height: 860px;
     height: 60%;
 
+}
+
+#back{
+    font-size:3em;
+    color:white;
+    text-decoration: none;
+    position:sticky;
+    bottom:10px;
+    left:10px;
+}
+
+#back:hover{
+    color:red;
+}
+
+@media only screen and (max-width:650px){
+    .grid-container {
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-row-gap: 5%;
+    }
+    
+    .grid-item {
+        min-height: 380px;
+        max-height: 500px;
+        text-align: center;
+    }
 }
