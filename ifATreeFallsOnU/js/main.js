@@ -73,7 +73,7 @@ function showChat() {
 // }
 
 function initializeDrag(id) {
-    var mousePosition;
+    var mouse;
     var offset = [0,0];
     var div;
     var isDown = false;
@@ -97,14 +97,9 @@ function initializeDrag(id) {
     document.addEventListener('mousemove', function(event) {
         event.preventDefault();
         if (isDown) {
-            mousePosition = {
-        
-                x : event.clientX,
-                y : event.clientY
-        
-            };
-            div.style.left = (mousePosition.x + offset[0]) + 'px';
-            div.style.top  = (mousePosition.y + offset[1]) + 'px';
+            mouse = { x: event.clientX, y: event.clientY };
+            div.style.left = (mouse.x + offset[0]) + 'px';
+            div.style.top  = (mouse.y + offset[1]) + 'px';
         }
     }, true);
 }
