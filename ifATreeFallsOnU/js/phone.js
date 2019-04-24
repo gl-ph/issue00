@@ -156,8 +156,8 @@ function createPhone() {
     headerPhone.innerHTML = phoneSvg;
     headerMore.innerHTML = moreSvg;
 
-    headerName.innerText = 'Jenny';
-    headerNumber.innerText = '+1 555-867-5309';
+    headerName.innerText = 'Brandon Dcruz';
+    headerNumber.innerText = '+1 555-566-5837';
 
     footerAttach.className = 'phone-glyph';
     footerText.className = 'footer-text';
