@@ -229,6 +229,9 @@ section.light {
     text-decoration-style: wavy;
 }
 
+#live{
+    font-size:1.3em;
+}
 
 /******************************************************************************/
 /**************************** ABOUT GL-PH *************************************/
@@ -420,6 +423,7 @@ textarea:-moz-placeholder {font-size: var(--body-text-size) !important;}
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+
 }
 
 .centerSE {
@@ -439,6 +443,8 @@ textarea:-moz-placeholder {font-size: var(--body-text-size) !important;}
     color: rgba(255,255,255,0.5);
     transition: color 0.2s, text-stroke 0.2s, -webkit-text-stroke 0.2s;
     cursor: pointer;
+    text-decoration: underline;
+    text-decoration-style: wavy;
 }
 
 .centerSE.stage0 {

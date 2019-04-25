@@ -10,10 +10,11 @@ body {
     font-weight: 700;
     color: blue;
     font-size: 7vh;
+    overflow-x: hidden;
 }
 
 #issue {
-    font-size: 2.5vh;
+    font-size: 3vh;
     position: relative;
     margin-top: 0;
     border-top: 0;
@@ -34,7 +35,7 @@ body {
 
 #wrap{
     display:grid;
-    grid-template-columns:repeat(5, .3fr 1fr);
+    grid-template-columns:repeat(4, .3fr 1fr) .3fr .01fr;
     grid-template-rows:repeat(5, 1fr);
     width:80vw; 
     margin:0 auto;
@@ -138,8 +139,9 @@ a:visited {
 }
 
 #back{
-    grid-row:5/6;
-    grid-column:1/2;
+    position:sticky;
+    bottom:20px;
+    left:20px;
     color:red;
 }
 
@@ -153,7 +155,7 @@ a:visited {
 #editor{
     z-index:99;
     display:none;
-    height:100vh;
+    min-height:100vh;
     width:100vw;
     position:absolute;
     top:0;
@@ -164,3 +166,18 @@ a:visited {
     padding:1em;
 }
 
+#editor p{
+    width:90vw;
+    margin: 1em auto;
+}
+
+#editor p#note{
+    width:80%;
+    margin:0 auto;
+}
+
+#editor p#dismiss{
+    text-align: center;
+    font-size:.5em;
+    color:lightgray;
+}
