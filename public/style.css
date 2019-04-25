@@ -254,6 +254,7 @@ section.light {
     flex-shrink: 0;
     max-width: var(--max-body-size);
     padding-top: 60px;
+    padding-bottom:60px;
     display: flex;
     flex-direction: column;
 }
@@ -429,6 +430,11 @@ textarea:-moz-placeholder {font-size: var(--body-text-size) !important;}
     text-decoration: underline;
 }
 
+.submitSubtitle {
+    color:white;
+    font-size:3vh;
+}
+
 .centerSE:hover {
     color: rgba(255,255,255,0.5);
     transition: color 0.2s, text-stroke 0.2s, -webkit-text-stroke 0.2s;
@@ -532,6 +538,7 @@ textarea:-moz-placeholder {font-size: var(--body-text-size) !important;}
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+
 
 /******************************************************************************/
 /**************************** FAQ *********************************************/
