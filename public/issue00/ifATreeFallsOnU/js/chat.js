@@ -1,11 +1,11 @@
 // Initialize Firebase - test db, don't use in final site
 var config = {
-    apiKey: 'AIzaSyAZEOf6-TL6CDZXsyr4KyLnRxjh_NOcQU0',
-    authDomain: 'test-chat-b8de5.firebaseapp.com',
-    databaseURL: 'https://test-chat-b8de5.firebaseio.com',
-    projectId: 'test-chat-b8de5',
-    storageBucket: 'test-chat-b8de5.appspot.com',
-    messagingSenderId: '847056541338'
+    apiKey: "AIzaSyDF4clJiI09UTLm_xJuZ-ZJT1wI598PPGU",
+    authDomain: "gl-ph-a275f.firebaseapp.com",
+    databaseURL: "https://gl-ph-a275f.firebaseio.com",
+    projectId: "gl-ph-a275f",
+    storageBucket: "gl-ph-a275f.appspot.com",
+    messagingSenderId: "1084963336851"
 };
 firebase.initializeApp(config);
 
@@ -47,6 +47,24 @@ function loadMessages() {
 }
 
 function initializeChat() {
+    createChat();
+    initializeDrag('chat-wrapper');
+
+    loadMessages();
+
+    $('#chat-input').on('keyup', function(event) {
+        if (event.keyCode == 13) { // 13 = Enter Key
+            if (username) {
+                sendMessage(username, $('#chat-input').val());
+                $('#chat-input').val('');
+            } else {
+                loginToChat();
+            }
+        }
+    });
+}
+
+function loginToChat() {
     if (username === null || username === '' || username === undefined) {
         username = prompt('Please enter your username:', 'guest');
 
@@ -57,18 +75,6 @@ function initializeChat() {
             sessionStorage.setItem('username', username);
         }
     }
-
-    createChat();
-    initializeDrag('chat-wrapper');
-
-    loadMessages();
-
-    $('#chat-input').on('keyup', function(event) {
-        if(event.keyCode == 13) { // 13 = Enter Key
-            sendMessage(username, $('#chat-input').val());
-            $('#chat-input').val('');
-        }
-    });
 }
 
 function destroyChat() {
@@ -108,7 +114,7 @@ function createChat() {
     chatButton3.src = 'media/button.png';
     
     // randomize starting position
-    let top = Math.floor(Math.random() * (70));
+    let top = Math.floor(Math.random() * (60));
     let left = Math.floor(Math.random() * (70));
     chatWrapper.style.top = top + '%';
     chatWrapper.style.left = left + '%';
@@ -129,6 +135,7 @@ function createChat() {
     document.querySelectorAll('#chat-header > img').forEach((element) => {
         element.addEventListener('click', function() {
             window.overlay.callEvent('title');
+            destroyChat();
         });
     });
 }
