@@ -25,7 +25,8 @@ function initializePhone() {
     let back = document.getElementById('header-back');
     back.addEventListener('click', (() => {
         window.overlay.callEvent('title');
-        // clearInterval(messageTimer);
+        clearInterval(messageTimer);
+        destroyPhone();
     }).bind(this));
     
     let sendText = document.getElementsByClassName('footer-send')[0];
@@ -136,7 +137,7 @@ function createPhone() {
     footerDiv.className = 'footer-wrapper';
 
     // randomize starting position
-    let top = Math.floor(Math.random() * (70));
+    let top = Math.floor(Math.random() * (60));
     let left = Math.floor(Math.random() * (70));
     phoneDiv.style.top = top + '%';
     phoneDiv.style.left = left + '%';

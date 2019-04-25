@@ -6,15 +6,6 @@ $(document).ready(function() {
     overlay.addContent("misc", showChat);
     
     overlay.render();
-    // document.getElementById('piece-link').addEventListener('click', function() {
-    //     window.overlay.callEvent('critical');
-    // });
-    // document.getElementById('interview-link').addEventListener('click', function() {
-    //     window.overlay.callEvent('interview');
-    // });
-    // document.getElementById('chat-link').addEventListener('click', function() {
-    //     window.overlay.callEvent('fun');
-    // });
 
     createPopup();
 
@@ -65,12 +56,10 @@ function showChat() {
         initializeChat();
         document.getElementById('chat-wrapper').style.zIndex = 999;
     }
-}
 
-// function hideEverything() {
-//     destroyPhone();
-//     destroyChat();
-// }
+    // first time entering chat they must enter username
+    loginToChat();
+}
 
 function initializeDrag(id) {
     var mouse;
@@ -159,7 +148,12 @@ function createPopup() {
     document.getElementsByTagName('body')[0].appendChild(popup);
 
     document.getElementById('close-popup').addEventListener('click', function() {
-        window.overlay.callEvent('title');
+        destroyPopup();
+        if (Math.random() > 0.5) {
+            window.overlay.callEvent('interview');
+        } else {
+            window.overlay.callEvent('misc');
+        }
     });
 
     document.getElementById('piece-link').addEventListener('click', function() {
