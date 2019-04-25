@@ -25,7 +25,7 @@ function initializePhone() {
     let back = document.getElementById('header-back');
     back.addEventListener('click', (() => {
         window.overlay.callEvent('title');
-        clearInterval(messageTimer);
+        // clearInterval(messageTimer);
     }).bind(this));
     
     let sendText = document.getElementsByClassName('footer-send')[0];

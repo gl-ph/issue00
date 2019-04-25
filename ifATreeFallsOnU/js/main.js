@@ -54,10 +54,10 @@ function showInterview() {
 
 function showChat() {
     if (document.getElementById('popup') !== null) {
-        document.getElementById('popup').style.zIndex = 997;
+        document.getElementById('popup').style.zIndex = 998;
     }
     if (document.getElementById('phone') !== null) {
-        document.getElementById('phone').style.zIndex = 998;
+        document.getElementById('phone').style.zIndex = 997;
     }
     if (document.getElementById('chat-wrapper') !== null) {
         document.getElementById('chat-wrapper').style.zIndex = 999;
@@ -98,6 +98,26 @@ function initializeDrag(id) {
         event.preventDefault();
         if (isDown) {
             mouse = { x: event.clientX, y: event.clientY };
+            div.style.left = (mouse.x + offset[0]) + 'px';
+            div.style.top  = (mouse.y + offset[1]) + 'px';
+        }
+    }, true);
+
+    div.addEventListener('touchstart', function(e) {
+        isDown = true;
+        offset = [
+            div.offsetLeft - e.touches[0].clientX,
+            div.offsetTop - e.touches[0].clientY
+        ];
+    }, true);
+
+    document.addEventListener('touchend', function() {
+        isDown = false;
+    }, true);
+
+    document.addEventListener('touchmove', function(event) {
+        if (isDown) {
+            mouse = { x: event.touches[0].clientX, y: event.touches[0].clientY };
             div.style.left = (mouse.x + offset[0]) + 'px';
             div.style.top  = (mouse.y + offset[1]) + 'px';
         }
