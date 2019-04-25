@@ -71,11 +71,12 @@ function showTitle(){
 
     //exit button
     let exitButton = document.createElement("BUTTON");
+    exitButton.id = "exitButton"; 
     exitButton.textContent = "X";
-    exitButton.onclick = () => {
+    exitButton.addEventListener("click", () => {
         let titleCard = document.getElementById("titleCard")
-            titleCard.style.display = "none";
-    }
+        titleCard.parentElement.removeChild(titleCard);
+    });
 
     //append links to list
     linkList.appendChild(B);
@@ -93,6 +94,5 @@ function showTitle(){
 
 }
 
-function showInterview(){}
-
-function showCritical(){}
+// function showInterview(){}
+// function showCritical(){}
