@@ -1,6 +1,6 @@
 const CANV_MULT_RATIO = 2;
 
-const sectIDs      = ["home","about","dig_lit","submit","faq"];
+const sectIDs      = ["home","about","faq", "submit"];
 // const buttonColors = [ "F0433A", "C9283E", "820333", "540032", "2E112D"];
 const buttonColors = [ "ff1f00", "ff1f00", "ff1f00", "ff1f00", "ff1f00"];
 var activePage = 0;
@@ -246,7 +246,7 @@ function initSections() {
     resizeHandlers.push(fixSectionHeights);
     initHomeSection();
     initAboutSection();
-    initDigLitSection();
+   // initDigLitSection();
     initSubmitSection();
     initFAQSection();
 }
@@ -423,7 +423,10 @@ function initHomeSection() {
 /******************************* ABOUT GL-PH SECTION **************************/
 /******************************************************************************/
 
-const ABOUT_TEXT = "Directed by undergraduates at the Rochester Institute of Technology (RIT), gl-ph is one of the first undergraduate literary journals in the nation dedicated exclusively to the publication of digital literature (otherwise known as electronic literature, or e-lit).\n\nWhy are we called gl-ph?\n\nWikipedia defines a glyph as “a hieroglyphic character or symbol; a pictograph.” We say that it’s the interface between text and icon, between code and image. The hyphen is a wild card, a parameter-driven space inside square brackets, an opening to inhabit in fluid and dynamic ways.";
+const ABOUT_TEXT = "Directed by undergraduate students at the Rochester Institute of Technology (RIT), gl-ph is dedicated exclusively to the publication of digital literature (aka electronic literature, or e-lit) created by undergraduates, graduates, teachers, and artists around the world. \n\nAs a STEM school, our staff consists of both advanced coders and students of digital literature. So, rather than simply presenting digital literature, we wanted our site design to enact some of the principles of electronic/digital literature itself. We wanted a site that pushed on standard web development principles, which, in turn, complicated (without detracting or distracting) the work. To that end, you'll wind up seeing what we're calling an \"intervention\" page - that is to say, a page that reflects/dialogues with the work. The intervention pages offer artist interviews, biographical information, and critical/creative responses. \n\nWe also are creating a maker's space. In the spirit of works like Nick Montfort's Taroko Gorge, where makers are encouraged to reuse and recycle code to produce their own digital literature, we will highlight one work each issue that you can download and reuse.\n\nEngage and enjoy!";
+
+
+
 
 var textAreaElement;
 
@@ -431,7 +434,7 @@ var nextAboutTextInd = 0;
 var lastAboutTextLen = 0;
 var aboutTypingNumExtra = 1;
 
-var aboutAnimText = "You already know! Type away!";
+var aboutAnimText = "Type here to find out!";
 var aboutAnimProg = 0;
 var aboutAnimTimeout;
 var doAboutAnim = true;
@@ -716,6 +719,7 @@ function initSubmitSectionElements() {
         if (elID == centerSE) {
             submitElement.classList.add("centerSE");
             submitElement.id = "centerSE";
+            
         }
         else if (middleSE.indexOf(elID) > -1) {
             submitElement.classList.add("middleSE");
@@ -725,6 +729,11 @@ function initSubmitSectionElements() {
         }
         document.getElementById("submit_sec").appendChild(submitElement);
     }
+
+    var issueNum = document.createElement("p");
+    issueNum.innerHTML = "(for issue 01)";
+    issueNum.className = "submitSubtitle";
+    document.getElementById("submit_sec").appendChild(issueNum);
 }
 
 function initSubmitSection() {
@@ -746,10 +755,9 @@ const FAQ_ANIM_STEP = 0.1;
 const FAQ_ANIM_STEP_TIME = 20;
 
 var questions = [
-    [["When will you be ", "We are "], "open for submissions", ["?", " right now, submit your work using the link above!"]],
-    [["How do I know if my work counts as ", "We take a pretty broad view about what constitutes "], "digital literature", ["?", ". You can submit your work and find out, or you can contact us in advance."]],
-    [["When will y", "We’re looking to release "], "our first issue", [" come out?", " (Issue 00 - Source)  during the summer of 2018."]],
-    [["When are ", "We’re looking at the first 100 "], "submissions", [" due?", ", on a rolling basis. The sooner you submit, the more likely your work will be featured!"]],
+    [["Why are you called gl-ph", "Wikepedia defines glyph"], "", ["?", " as “a hieroglyphic character or symbol; a pictograph.” We say that it’s the interface between text and icon, between code and image. The hyphen is a wild card, a parameter-driven space inside square brackets, an opening to inhabit in fluid and dynamic ways."]],
+    [["What is ", "Loosely defined, "], "digital literature", ["?", " uses code and digital media (think hyperlinks, mouse movements, or algorithm-based text generation) to build literature that engages the reader/viewer/player in innovative and surprising ways. That’s where gl-ph comes in: to display and promote work that a print journal (such as RIT’s own Signatures literary and art magazine) can’t capture."]],
+    [["When are ", "We accept "], "submissions", [" due?", " on a rolling basis."]],
     [["Who can submit ", "Anyone and everyone. We’re looking for "], "work ", ["to gl-ph?", "from undergraduates, graduate students, educators, and any/all artists/writers/creators working with digital literature. "]],
     [["What ", "Here "], "are some examples of digital literature that reflect what", [" you’re ", " we're "], " looking for in a submission", ["?",": <a href='http://luckysoap.com/ethericocean/'>Etheric Ocean by J.R. Carpenter</a>, <a href='http://www.altx.com/thebody/'>my body & a Wunderkammer by Shelley Jackson</a>"]],
     [["I want to","You can"]," keep track of what gl-ph is up to",[". How can I tune in?"," by following us on <a href='https://fb.me/gl.ph.team'>facebook</a> and <a href='https://www.instagram.com/gl__ph/'>instagram</a>."]]
