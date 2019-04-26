@@ -55,16 +55,26 @@ function addElementToTheList(){
   var orLists = getInput("orInput").split("\n");
 
   eitherLists.forEach(function(item){
-    eitherTexts.push(item);
+    if (item != ""){
+      eitherTexts.push(item);
+    }
   });
 
   slashLists.forEach(function(item){
-    slashTexts.push(item);
+    if (item != ""){
+      slashTexts.push(item);
+    }
   });
 
   orLists.forEach(function(item){
-    orTexts.push(item);
+    if (item != ""){
+      orTexts.push(item);
+    }
   });
+
+  console.log(eitherTexts);
+  console.log(orTexts);
+  console.log(slashTexts);
   
     while (eitherTexts.length > slashTexts.length){
       slashTexts.push(eitherTexts[eitherTexts.length -1]);
