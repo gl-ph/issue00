@@ -71,10 +71,6 @@ function addElementToTheList(){
       orTexts.push(item);
     }
   });
-
-  console.log(eitherTexts);
-  console.log(orTexts);
-  console.log(slashTexts);
   
     while (eitherTexts.length > slashTexts.length){
       slashTexts.push(eitherTexts[eitherTexts.length -1]);
