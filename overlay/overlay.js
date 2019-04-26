@@ -3,7 +3,7 @@ const topRight = `<div class="item" style="top: 0; right: 0;" id="glyph2">{sym}<
 const bottomLeft = `<div class="item" style="bottom: 0; left: 0;" id="glyph3">{sym}</div>`;
 const bottomRight = `<div class="item" style="bottom: 0; right: 0;" id="glyph4">{sym}</div>`;
 const listItem = `<div class="item" style="bottom: {bottom}; right: {right};" id="glyph{id}">{sym}</div>`;
-const glphTitle = `<a class="item" id="glphTitle" href="https://gl-ph.com/issue00/issue00.html">gl-ph</a>`;
+const glphTitle = `<a class="item" id="glphTitle" href="/issue00/index.html">gl-ph</a>`;
 
 // stores the mapping of content type to its glyph
 let typeModels = {
