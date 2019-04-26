@@ -2,7 +2,7 @@ body{
     margin: 5%;
     background: url("../images/background.png");
     background-size: cover;
-    font-family: "MS Sans-serif", sans-serif, Georgia;
+    font-family: "Roboto Mono", monospace;
 }
 *{
    -moz-user-select: none;
@@ -60,6 +60,11 @@ nav > li{
 }
 #firstDrop > li > a{
   text-decoration: none;
+  color: black;
+}
+#firstDrop > li > a:visited{
+  text-decoration: none;
+  color: black;
 }
 .dropContent > li:hover{
   background-color: grey;
@@ -78,8 +83,7 @@ nav > li{
     grid-column-gap: 8%;
     border: solid;
     border-style: outset;
-    width: 20%;
-    padding-right: 5px;
+    padding-right: 35px;
     border-left: none;
 }
 .menuOpt{

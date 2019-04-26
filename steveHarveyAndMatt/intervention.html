@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../overlay/overlay.css">
         <script src="../overlay/overlay.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono"
         rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -23,10 +23,6 @@
                     </div>
                     <div class="dropdown">
                       <button><u>E</u>dit</button>
-                      <div class="dropContent">
-                        <li>Test1</li>
-                        <li>Test2</li>
-                      </div>
                     </div>
                     <div class="dropdown">
                       <button><u>M</u>ail</button>
@@ -40,7 +36,9 @@
                     <div class="dropdown">
                       <button><u>H</u>elp</button>
                       <div class="dropContent">
-                        <li></li>
+                        <li>Peruse some mail and play with the interface. 
+                            What happens when you trash an email?
+                        </li>
                       </div>
                     </div>
                 </nav>
@@ -141,6 +139,7 @@
         overlay.render(color, outline);
     });
     function showTitle(){
+       window.location.href = "https://archive.work/";
     }
 
     function showInterview(){
