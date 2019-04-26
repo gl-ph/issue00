@@ -1,6 +1,6 @@
 window.onload = function() {
     //Increment the dial by 10
-    var DIAL_INCR = 10;
+    var DIAL_INCR = 20;
     //Max volume corresponds with rotation of 90 deg
     var MAX_VOL = 90;
     //Min volume corresponds with rotation of -90 deg
@@ -101,7 +101,7 @@ window.onload = function() {
             knob.element.setAttribute('style', 'transform:rotate(' + (knob.deg + DIAL_INCR) + 'deg)');
             knob.deg += DIAL_INCR;
             changeVol(audio, knob)
-            if (knob.deg == MAX_VOL){
+            if (knob.deg >= MAX_VOL){
                 knob.direction = false;
             }
         }
@@ -109,7 +109,7 @@ window.onload = function() {
             knob.element.setAttribute('style', 'transform:rotate(' + (knob.deg - DIAL_INCR) + 'deg)');
             knob.deg -= DIAL_INCR;
             changeVol(audio, knob)
-            if (knob.deg == MIN_VOL){
+            if (knob.deg <= MIN_VOL){
                 knob.direction = true;
             }
         }
@@ -126,12 +126,13 @@ window.onload = function() {
      */
     function changeVol(audio, knob){
         var VOL_INCR;
+        console.log(audio.volume);
         if (Math.abs(knob.deg) > 80)
             //set volume incrementor near endpoints
             VOL_INCR = 0.099;
         else
             //standard volume incrementor value
-            VOL_INCR = 0.05;
+            VOL_INCR = 0.10;
         audio.volume = ((knob.direction) ? audio.volume + VOL_INCR: audio.volume - VOL_INCR);
     }
 

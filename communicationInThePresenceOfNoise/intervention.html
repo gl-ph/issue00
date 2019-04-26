@@ -10,8 +10,13 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet" type="text/css">
     </head>
     <body>
+        <img id="titleImg" src="assets/images/title.gif">
         <div id="main">
             <img id="radio" src="assets/images/radio@4x.png">
+            <p id="bio">Marisa Langlois is a software engineer by day and a writer of fiction, creative nonfiction, 
+                and poetry by night. She graduated from RIT in December 2018 and currently lives in Seattle, Washington, 
+                where she writes code to test airplanes for Performance Software Corporation and tends obsessively to her balcony garden.
+            </p>
             <div class="knob1">
                 <img class="knob1" id="img1" src="assets/images/knob_line.png">
                 <audio loop id="voice">
@@ -48,14 +53,32 @@
             overlay.render(color, outline);
     });
     function showTitle(){
+        main.style.display = "block";
+        document.getElementById("titleImg").style.display = "none";
+        document.getElementById("bio").style.display = "none";
+        document.getElementsByClassName("knob1")[0].style.display = "block";
+        document.getElementsByClassName("slider")[0].style.display = "block";
+        document.getElementsByClassName("button1")[0].style.display = "block";
+        document.getElementsByClassName("button2")[0].style.display = "block";
+        document.getElementsByClassName("button3")[0].style.display = "block";
+        document.getElementsByClassName("knob2")[0].style.display = "block";
     }
 
     function showInterview(){
-        window.location.href = "https://people.rit.edu/mkl8568/communicationinthepresenceofnoise/tracery-master/";
+            document.getElementsByClassName("knob1")[0].style.display = "none";
+            document.getElementsByClassName("slider")[0].style.display = "none";
+            document.getElementsByClassName("button1")[0].style.display = "none";
+            document.getElementsByClassName("button2")[0].style.display = "none";
+            document.getElementsByClassName("button3")[0].style.display = "none";
+            document.getElementsByClassName("knob2")[0].style.display = "none";
+            document.getElementById("bio").style.display = "block";
     }
     
     function showCritical(){
-
+        var main = document.getElementById("main");
+        var img = document.getElementById("titleImg");
+        main.style.display = "none";
+        img.style.display = "block";
     }
 </script>
     </body>

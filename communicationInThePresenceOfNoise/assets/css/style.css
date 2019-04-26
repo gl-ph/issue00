@@ -1,5 +1,14 @@
 body{
     margin: 5%;
+    font-family: "Roboto Mono", monospace;
+}
+#titleImg{
+    display: none;
+    margin: 0 auto;
+    width: 54%;
+    border: solid;
+    border-width: 6px;
+    border-color: black;
 }
 #main{
     display: block;
@@ -12,6 +21,15 @@ body{
     margin: 0 auto;
     max-width: 100%;
 
+}
+#bio{
+    display: none;
+    position: absolute;
+    text-align: center;
+    top: 60%;
+    left: 15%;
+    width: 70%;
+    font-size: 18px;
 }
 .knob1{
     position: absolute;
