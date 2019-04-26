@@ -2,13 +2,14 @@ $(document).ready(function() {
     let color = "black", outline = "white";
     const overlay = new Overlay(2, color, outline);
     overlay.addContent("title", showTitle);
-    overlay.addContent("interview", showInterview);
-    overlay.addContent("critical", showCritical);
+    // overlay.addContent("interview", showInterview);
+    // overlay.addContent("critical", showCritical);
     overlay.render(color, outline);
 });
 
 function showTitle(){
     let titleCard = document.createElement("DIV");
+    titleCard.id = "titleCard";
     //title card styles
     titleCard.style.position = "absolute";
     titleCard.style.left = "40vw";
@@ -68,6 +69,15 @@ function showTitle(){
     X_link.href = "piece/x_the_spot.html";
     X.appendChild(X_link);
 
+    //exit button
+    let exitButton = document.createElement("BUTTON");
+    exitButton.id = "exitButton"; 
+    exitButton.textContent = "X";
+    exitButton.addEventListener("click", () => {
+        let titleCard = document.getElementById("titleCard")
+        titleCard.parentElement.removeChild(titleCard);
+    });
+
     //append links to list
     linkList.appendChild(B);
     linkList.appendChild(I);
@@ -76,6 +86,7 @@ function showTitle(){
     linkList.appendChild(X);
 
     //append children
+    titleCard.appendChild(exitButton);
     titleCard.appendChild(title);
     titleCard.appendChild(authorName);
     titleCard.appendChild(linkList);
@@ -83,6 +94,5 @@ function showTitle(){
 
 }
 
-function showInterview(){}
-
-function showCritical(){}
+// function showInterview(){}
+// function showCritical(){}

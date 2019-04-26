@@ -97,13 +97,18 @@ $(function(){
 												break;
 										}
 										$('.welcome-message').html(pieceName); //set fade in message to title of piece
-										$('.welcome-message').fadeIn(function(){ 
-											setTimeout(() => {
-												location.reload(); //Refresh page in background, allowing new selection upon return
-											}, 400);
-											//open the corresponding page
-											window.open(linkToPiece).focus();
-										});
+										// setTimeout( () => {
+											$('.welcome-message').fadeIn(function(){ 
+												setTimeout(() => {
+													//open the corresponding page
+													window.open(linkToPiece).focus();
+												}, 1000);
+												setTimeout( () => {
+													location.reload(); //Refresh page in background, allowing new selection upon return
+												},1100);
+											});
+										// }, 000);
+										
 									});
 								});
 							});

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Communication in the Presence of Noise</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="../overlay/overlay.css">
+        <script src="../overlay/overlay.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <img id="titleImg" src="assets/images/title.gif">
+        <div id="main">
+            <img id="radio" src="assets/images/radio@4x.png">
+            <p id="bio">Marisa Langlois is a software engineer by day and a writer of fiction, creative nonfiction, 
+                and poetry by night. She graduated from RIT in December 2018 and currently lives in Seattle, Washington, 
+                where she writes code to test airplanes for Performance Software Corporation and tends obsessively to her balcony garden.
+            </p>
+            <div class="knob1">
+                <img class="knob1" id="img1" src="assets/images/knob_line.png">
+                <audio loop id="voice">
+                    <source src="assets/sound/voice.ogg" type="audio/mp3">
+                </audio>
+            </div>
+            <div class="slider">
+                <img class="slider" src="assets/images/tune_bar@4x.png">
+            </div>
+            <div class="button1">
+                <img class="button1" id="img3" src="assets/images/unpressed_btn@4x.png">
+            </div>
+            <div class="button2">
+                <img class="button2" id="img4" src="assets/images/unpressed_btn@4x.png">
+            </div>
+            <div class="button3">
+                <img class="button3" id="img5" src="assets/images/unpressed_btn@4x.png">
+            </div>
+            <div class="knob2">
+                <img class="knob2" id="img2" src="assets/images/knob_line.png">
+                <audio loop id="morse">
+                    <source src="assets/sound/morseCode.ogg" type="audio/mp3">
+                </audio>
+            </div>
+        </div>
+        <script src="assets/javascript/script.js"></script>
+        <script type="application/javascript">
+        $(document).ready(function() {
+            let color = "black", outline = "white";
+            const overlay = new Overlay(7, color, outline);
+            overlay.addContent("title", showTitle);
+            overlay.addContent("interview", showInterview);
+            overlay.addContent("critical", showCritical);
+            overlay.render(color, outline);
+    });
+    function showTitle(){
+        main.style.display = "block";
+        document.getElementById("titleImg").style.display = "none";
+        document.getElementById("bio").style.display = "none";
+        document.getElementsByClassName("knob1")[0].style.display = "block";
+        document.getElementsByClassName("slider")[0].style.display = "block";
+        document.getElementsByClassName("button1")[0].style.display = "block";
+        document.getElementsByClassName("button2")[0].style.display = "block";
+        document.getElementsByClassName("button3")[0].style.display = "block";
+        document.getElementsByClassName("knob2")[0].style.display = "block";
+    }
+
+    function showInterview(){
+            document.getElementsByClassName("knob1")[0].style.display = "none";
+            document.getElementsByClassName("slider")[0].style.display = "none";
+            document.getElementsByClassName("button1")[0].style.display = "none";
+            document.getElementsByClassName("button2")[0].style.display = "none";
+            document.getElementsByClassName("button3")[0].style.display = "none";
+            document.getElementsByClassName("knob2")[0].style.display = "none";
+            document.getElementById("bio").style.display = "block";
+    }
+    
+    function showCritical(){
+        var main = document.getElementById("main");
+        var img = document.getElementById("titleImg");
+        main.style.display = "none";
+        img.style.display = "block";
+    }
+</script>
+    </body>
+</html>

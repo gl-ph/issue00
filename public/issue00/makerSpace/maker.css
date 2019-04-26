@@ -5,6 +5,7 @@ body{
     overflow-x: hidden;
     font-family: 'Roboto Mono', monospace;
     background-color: rgba(191, 191, 191, 0.2);
+    margin-bottom:5em;
 }
 
 button{

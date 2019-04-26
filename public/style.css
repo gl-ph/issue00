@@ -381,6 +381,14 @@ textarea:-moz-placeholder {font-size: var(--body-text-size) !important;}
     cursor: default;
 }
 
+.digLitAnimSection a {
+    color:red;
+}
+
+.digLitAnimSection a:hover{
+    color:blue;
+}
+
 /******************************************************************************/
 /**************************** SUBMIT ******************************************/
 /******************************************************************************/

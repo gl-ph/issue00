@@ -1,6 +1,6 @@
 const CANV_MULT_RATIO = 2;
 
-const sectIDs      = ["home","about","faq", "submit"];
+const sectIDs      = ["home","about","dig_lit","faq", "submit"];
 // const buttonColors = [ "F0433A", "C9283E", "820333", "540032", "2E112D"];
 const buttonColors = [ "ff1f00", "ff1f00", "ff1f00", "ff1f00", "ff1f00"];
 var activePage = 0;
@@ -246,7 +246,7 @@ function initSections() {
     resizeHandlers.push(fixSectionHeights);
     initHomeSection();
     initAboutSection();
-   // initDigLitSection();
+    initDigLitSection();
     initSubmitSection();
     initFAQSection();
 }
