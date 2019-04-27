@@ -43,7 +43,7 @@ function loadMessages() {
         ref = firebase.database().ref('/messages/');
     }
 
-    ref.limitToLast(32).on('child_added', callback);
+    ref.on('child_added', callback);
 }
 
 function initializeChat() {
