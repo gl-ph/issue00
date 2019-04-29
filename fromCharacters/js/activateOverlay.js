@@ -24,7 +24,7 @@ function showTitle(){
 
     //author name
     let authorName = document.createElement("H2");
-    authorName.textContent = "By Nick Monfort";
+    authorName.textContent = "By Nick Montfort";
 
     //piece links
     let linkList = document.createElement("UL");
