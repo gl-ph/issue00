@@ -157,7 +157,7 @@ function createPopup() {
     });
 
     document.getElementById('piece-link').addEventListener('click', function() {
-        window.open('../trees/trees.html');
+        window.open('piece/trees.html');
     });
 
     initializeDrag('popup');
