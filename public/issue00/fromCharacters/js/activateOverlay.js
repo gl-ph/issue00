@@ -12,11 +12,12 @@ function showTitle(){
     titleCard.id = "titleCard";
     //title card styles
     titleCard.style.position = "absolute";
-    titleCard.style.left = "40vw";
+    titleCard.style.left = "33vw";
     titleCard.style.top = "20vh";
     titleCard.style.backgroundColor = "black";
     titleCard.style.color = "white";
     titleCard.style.padding = "3vw 4vw";
+    titleCard.style.width = "33vw";
 
     //piece title
     let title = document.createElement("H1");
@@ -68,6 +69,10 @@ function showTitle(){
     X_link.textContent = "X_The_Spot";
     X_link.href = "piece/x_the_spot.html";
     X.appendChild(X_link);
+    
+    let bio = document.createElement("p");
+    bio.innerHTML="Nick Montfort constructs computational poetry online, for galleries, and for publication in books such as <em>#!, Autopia, The Truelist</em>, and <em>Hard West Turn</em>. He is professor of digital media at MIT, where he directs The Trope Tank. Montfort edits Using Electricity, a series of computer-generated books from Counterpath. He runs the micropress Bad Quarto and publishes the online magazine <em>Taper</em>. His most recent non-computer-generated book is <em>The Future</em> (MIT Press, 2017). He lives in New York and Boston.";
+    
 
     //exit button
     let exitButton = document.createElement("BUTTON");
@@ -90,6 +95,7 @@ function showTitle(){
     titleCard.appendChild(title);
     titleCard.appendChild(authorName);
     titleCard.appendChild(linkList);
+    titleCard.appendChild(bio);
     document.body.appendChild(titleCard);
 
 }
