@@ -7,11 +7,53 @@
     <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 <!--    <link href="css/styles.css" rel="stylesheet">-->
     <style>
+
+        
         body{
           font-family: 'Lora', serif;
           background-color: black;
+            
         }
 
+        #makerNoteWrap{
+            width:100vw;
+            height:100vh;
+            background-color:rgb(47, 47, 48, .75);
+            position:absolute;
+            top:0;
+            left:0;
+
+        }
+        
+        #makerNote{
+            width:33vw;
+            height:25vh;
+            position:absolute;
+            left:33vw;
+            top:33vh;
+            background:white;
+            z-index:99;
+            padding:2em;
+            border:6px solid black;
+        }
+        
+        #makerNote h2{
+            text-align: center;
+        }
+        
+        #x {
+            position:relative;
+            top:0;
+            right:1vw;
+            text-align: right;
+            padding:0;
+            margin:0;
+        }
+        
+        #dismiss{
+            color:#6a6c6d;
+        }
+        
         #app{
           display: grid;
           grid-gap: 5px;
@@ -86,6 +128,7 @@
           color: #F7B733;
         }
 
+        
         @media only screen and (max-width: 600px)
         {
           #app{
@@ -134,6 +177,15 @@
     
     
 <body>
+    <div id ="makerNoteWrap">
+        <div id ="makerNote">
+            <p id ="x">X</p>
+            <h2>Maker's Piece: either/or</h2>
+            <p>For issue 00, we have chosen <em>either/or</em> by Brandon Dcruz as our Maker's Playground piece. We encourage you to create your own version <a href ="../makerSpace/index.html">here</a>! </p>
+            <p id ="dismiss"><br>Click anywhere to dismiss. This information can also be found by scrolling down.</p>
+
+        </div>
+    </div>
   <div id="app">
 <!--
 		<audio src="media/better.mp3" autoplay loop>
@@ -164,6 +216,13 @@
 	<script>
             "use strict";
 
+            //hides the intro note about the maker's space
+            document.getElementById("makerNoteWrap").addEventListener("click",hide);
+            function hide(){
+                let note = document.getElementById("makerNoteWrap");
+                note.style.display = "none";
+            }
+            
             //All of the variables from the document
             let either = document.querySelector("#either");
             let slash = document.querySelector("#slash");
@@ -378,3 +437,23 @@
 </script>
 </body>
 </html>
+
+ <!--
+
+        Created by Brandon Dcruz on 30 April 2018
+        Copyright (c) 2018 Brandon Dcruz <bvd5889@rit.edu>
+
+        Permission to use, copy, modify, and/or distribute this software for any
+        purpose with or without fee is hereby granted, provided that the above
+        copyright notice and this permission notice appear in all copies.
+
+        THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+        WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+        MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+        SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+        WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+        ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
+        IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+        -->
+
