@@ -75,23 +75,23 @@ $(function(){
 										switch(facingLetter){
 											case "B":
 												linkToPiece = "piece/b_construction.html";
-												pieceName = "B_Construction";
+												pieceName = "Construction of the Tower";
 												break;
 											case "I":
 												linkToPiece = "piece/i_attitudes_compound.html";
-												pieceName = "I_Attitudes_Compound";
+												pieceName = "Attitudes/Compound";
 												break;
 											case "L":
 												linkToPiece = "piece/l_typing_her.html";
-												pieceName = "L_Typing_Her";
+												pieceName = "Typing Her";
 												break;
 											case "O":
 												linkToPiece = "piece/o_right_around.html";
-												pieceName = "O_Right_Around";
+												pieceName = "Right Around";
 												break;
 											case "X":
 												linkToPiece = "piece/x_the_spot.html";
-												pieceName = "X_The_Spot";
+												pieceName = "The Spot";
 												break;
 											default:
 												break;

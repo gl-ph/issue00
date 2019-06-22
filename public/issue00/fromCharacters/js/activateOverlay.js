@@ -34,7 +34,7 @@ function showTitle(){
     let B = document.createElement("LI");
     let B_link = document.createElement("A");
     B_link.target = "blank";
-    B_link.textContent = "B_Construction";
+    B_link.textContent = "Construction of the Tower";
     B_link.href = "piece/b_construction.html";
     B.appendChild(B_link);
 
@@ -42,7 +42,7 @@ function showTitle(){
     let I = document.createElement("LI");
     let I_link = document.createElement("A");
     I_link.target = "blank";
-    I_link.textContent = "I_Attitudes_Compound";
+    I_link.textContent = "Attitudes/Compound";
     I_link.href = "piece/i_attitudes_compound.html";
     I.appendChild(I_link);
 
@@ -50,7 +50,7 @@ function showTitle(){
     let L = document.createElement("LI");
     let L_link = document.createElement("A");
     L_link.target = "blank";
-    L_link.textContent = "L_Typing_Her";
+    L_link.textContent = "Typing Her";
     L_link.href = "piece/l_typing_her.html";
     L.appendChild(L_link);
 
@@ -58,7 +58,7 @@ function showTitle(){
     let O = document.createElement("LI");
     let O_link = document.createElement("A");
     O_link.target = "blank";
-    O_link.textContent = "O_Right_Around";
+    O_link.textContent = "Right Around";
     O_link.href = "piece/o_right_around.html";
     O.appendChild(O_link);
 
@@ -66,7 +66,7 @@ function showTitle(){
     let X = document.createElement("LI");
     let X_link = document.createElement("A");
     X_link.target = "blank";
-    X_link.textContent = "X_The_Spot";
+    X_link.textContent = "The Spot";
     X_link.href = "piece/x_the_spot.html";
     X.appendChild(X_link);
     
