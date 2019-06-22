@@ -135,7 +135,11 @@ function createPopup() {
 
     xButton.innerText = 'x';
     viewButton.innerText = 'view';
-
+    
+    let bio = document.createElement("p");
+    bio.id = "bio";
+    bio.innerHTML = 'Brandon Dcruz is a fourth-year SOIS student at RIT studying music composition and production, creative writing, web design, and film. He is the president of the RIT Jam Club, a former literary team lead for Signatures Magazine, and the director of the Altona Meadows BIG BAND! Brandon is also a frequent composer for various RIT student films, including last year\'s "Nobody\'s Home" directed by Jesse James. When he\'s not performing on stages, Brandon loves exploring record stores, tinkering with JavaScript oddities, napping, or drumming for the RIT Jazz Ensemble or local band Cigs Inside. His work can be found on his website https://dcruzships.github.io/, or on Facebook, YouTube, and Spotify @AltonaMeadows.'
+    
     popup.appendChild(xButton);
     popup.appendChild(document.createTextNode('if a tree falls on u'));
     popup.appendChild(document.createElement('br'));
@@ -144,6 +148,7 @@ function createPopup() {
     popup.appendChild(document.createElement('br'));
     popup.appendChild(document.createElement('br'));
     popup.appendChild(viewButton);
+    popup.appendChild(bio);
 
     document.getElementsByTagName('body')[0].appendChild(popup);
 

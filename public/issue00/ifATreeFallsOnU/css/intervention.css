@@ -300,3 +300,7 @@ img.visited {
     padding: 6px 10px;
     text-decoration: none;
 }
+
+#bio{
+    font-size:.5em;
+}
