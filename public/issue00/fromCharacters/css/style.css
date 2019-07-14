@@ -148,3 +148,13 @@ body{
 	color: white;
 
 }
+
+#notice{
+    color:darkgray;
+    font-family: 'Roboto Mono', 'monospace';
+    width:34vw;
+    position:absolute;
+    bottom:20px;
+    left:33vw;
+    font-size:.8em;
+}
