@@ -1,0 +1,29 @@
+[debug] [2019-07-14T22:35:27.792Z] ----------------------------------------------------------------------
+[debug] [2019-07-14T22:35:27.795Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-07-14T22:35:27.795Z] CLI Version:   6.6.0
+[debug] [2019-07-14T22:35:27.795Z] Platform:      darwin
+[debug] [2019-07-14T22:35:27.795Z] Node Version:  v10.15.3
+[debug] [2019-07-14T22:35:27.802Z] Time:          Sun Jul 14 2019 18:35:27 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-07-14T22:35:27.802Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-14T22:35:27.818Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-14T22:35:27.819Z] > authorizing via signed-in user
+[debug] [2019-07-14T22:35:27.819Z] [iam] checking project gl-ph-a275f for permissions ["firebase.projects.get"]
+[debug] [2019-07-14T22:35:27.821Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-14T22:35:27.821Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-14T22:35:28.094Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-14T22:35:28.104Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/gl-ph-a275f:testIamPermissions  
+
+[debug] [2019-07-14T22:35:28.487Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-14T22:35:28.489Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/gl-ph-a275f  
+ 
+[debug] [2019-07-14T22:35:28.764Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Christine/Documents/GitHub/issue00'...
+[info] 
+[debug] [2019-07-14T22:35:28.767Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1084963336851/clients/_:getWebAppConfig  
+ 
+[debug] [2019-07-14T22:35:29.276Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000

@@ -1,5 +1,6 @@
 body{
     margin: 5%;
+    margin-top:10%;
     font-family: "Roboto Mono", monospace;
 }
 #titleImg{
@@ -22,14 +23,25 @@ body{
     max-width: 100%;
 
 }
-#bio{
-    display: none;
-    position: absolute;
+
+#pieceInfo{
+    display:none;
     text-align: center;
+    font-size: 18px;
+    margin-top:2em;
+    width:70%;
+    margin:0 auto;
+    
+}
+#bio{
+/*    position: absolute;*/
+    
+/*
     top: 60%;
     left: 15%;
     width: 70%;
-    font-size: 18px;
+*/
+
 }
 .knob1{
     position: absolute;
@@ -67,4 +79,35 @@ body{
     right: 8%;
     width: 40%;
 
+}
+
+button{
+    display: block;
+    border: 5px solid blue;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+    text-decoration: none;
+    border-radius:5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color:white;
+    color:blue;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+
+button:hover{
+    background-color:blue;
+}
+
+a:hover > button {
+    color:white;
 }
