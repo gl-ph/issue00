@@ -9,7 +9,7 @@ const glphTitle = `<a class="item" id="glphTitle" href="/issue00/index.html">gl-
 let typeModels = {
     "title": {char: "~", id: "#glyph1", event: null, callback: null},
     "interview": {char: '"', id: "", event: null, callback: null},
-    "critical": {char: "&amp;", id: "", event: null, callback: null},
+    "critical": {char: "&#35;", id: "", event: null, callback: null},
     "extra": {char: "*", id: "#glyph4", event: null, callback: null},
     "misc": {char: "&#8253;", id: "", event: null, callback: null},
     "foreward": {char: ":", id: "", event: null, callback: null},
