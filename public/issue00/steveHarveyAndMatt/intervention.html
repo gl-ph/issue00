@@ -2,83 +2,152 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Communication in the Presence of Noise</title>
+        <title>SteveHarveyandMatt</title>
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="../overlay/overlay.css">
         <script src="../overlay/overlay.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono"
+        rel="stylesheet" type="text/css">
     </head>
     <body>
-        <img id="titleImg" src="assets/images/title.gif">
-        <div id="main">
-            <img id="radio" src="assets/images/radio@4x.png">
-            <p id="bio">Marisa Langlois is a software engineer by day and a writer of fiction, creative nonfiction, 
-                and poetry by night. She graduated from RIT in December 2018 and currently lives in Seattle, Washington, 
-                where she writes code to test airplanes for Performance Software Corporation and tends obsessively to her balcony garden.
-            </p>
-            <div class="knob1">
-                <img class="knob1" id="img1" src="assets/images/knob_line.png">
-                <audio loop id="voice">
-                    <source src="assets/sound/voice.ogg" type="audio/mp3">
-                </audio>
-            </div>
-            <div class="slider">
-                <img class="slider" src="assets/images/tune_bar@4x.png">
-            </div>
-            <div class="button1">
-                <img class="button1" id="img3" src="assets/images/unpressed_btn@4x.png">
-            </div>
-            <div class="button2">
-                <img class="button2" id="img4" src="assets/images/unpressed_btn@4x.png">
-            </div>
-            <div class="button3">
-                <img class="button3" id="img5" src="assets/images/unpressed_btn@4x.png">
-            </div>
-            <div class="knob2">
-                <img class="knob2" id="img2" src="assets/images/knob_line.png">
-                <audio loop id="morse">
-                    <source src="assets/sound/morseCode.ogg" type="audio/mp3">
-                </audio>
+        <div id="container">
+            <div id="main">
+                <nav>
+                    <div class="dropdown">
+                      <button><u>F</u>ile</button>
+                      <div id="firstDrop" class="dropContent">
+                        <li><a href="https://epa.archive.work/">Enter Piece</a></li>
+                        <li>Close</li>
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <button><u>E</u>dit</button>
+                    </div>
+                    <div class="dropdown">
+                      <button><u>M</u>ail</button>
+                    </div>
+                    <div class="dropdown">
+                      <button><u>C</u>ontacts</button>
+                    </div>
+                    <div class="dropdown">
+                      <button><u>T</u>ools</button>
+                    </div>
+                    <div class="dropdown">
+                      <button><u>H</u>elp</button>
+                      <div class="dropContent">
+                        <li>Peruse some mail and play with the interface. 
+                            What happens when you trash an email?
+                        </li>
+                      </div>
+                    </div>
+                </nav>
+                <div id="menu">
+                    <div id="new" class="menuOpt">
+                        <img id="newMailimg" class="menuElement" src="assets/images/newMail.gif">
+                        <p class="menuElement">New</p>
+                        <p class="menuElement">Email</p>
+                    </div>
+                    <div id="send" class="menuOpt">
+                        <img class="menuElement" src="assets/images/up.gif">
+                        <p class="menuElement">Send</p>
+                    </div>
+                    <div id="recieve" class="menuOpt">
+                        <img class="menuElement" src="assets/images/down.gif">
+                        <p class="menuElement">Receive</p>
+                    </div>
+                </div>
+                <div id="mainGrid">
+                    <div id="options">
+                        <ul>
+                            <li>
+                                <p><img src="assets/images/mailbox.gif"> MailBox</p>
+                                <ul id="insideList">
+                                    <li>
+                                        <p><img class="iconIMG" src="assets/images/mailsOption.gif"> Inbox</p>
+                                    </li>
+                                    <li>
+                                        <p><img class="iconIMG" src="assets/images/mailsOption.gif"> Outbox</p>
+                                    </li>
+                                    <li>
+                                        <p><img class="iconIMG" src="assets/images/mailsOption.gif"> Sent</p>
+                                    </li>
+                                    <li>
+                                        <p><img id="trashIcon" class="iconIMG" src="assets/images/trash.gif"> Trash</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="mailSelect">
+                        <div id="mainHeader">
+                            <h3>Steve, Harvey, and Matt</h3>
+                        </div>
+                        <div id="firstMail" class="email" onclick="showSelected(this)" onmousedown="grabMail(this)">
+                            <img src="assets/images/webinterface.gif">
+                            <h4>From: Hessling, Michael Sent: Tue 5/9/2017 11:19:23 AM</h4>
+                            <p>All right. This took me about 90 minutes to do 108 pages, and it's not going to get easier, I don't think. I've finally figured out why bulk archive
+                               doesn't work 100% ... we get rate limited by Akamai. Bulk archive goes too fast. I resorted to doing the archiving 1-by-1. It's not too slow once you get a
+                               rhythm (gonna get you), but tedious since I waited until the page was definitely archived before hitting the next.
+                               The bulk archive missed four files, highlighted in yellow in the attached spreadsheet. I found three of them stuck in the queue for archiving state (so at least that fails gracefully).
+                               (All three are attached.) Missing: clean-power-plan-and-carbon-pollution-standards-regulatory-actions. I find no evidence of a redirect to some other page (like clean-power-plan-existing-power-plants-regulatory actions??), but I could be wrong.
+                               What's the best way to get those three files over to archive? ~Mike
+                             </p>
+                        </div>
+                        <div id="secondMail" class="email" onclick="showSelected(this)" onmousedown="grabMail(this)">
+                            <img src="assets/images/webinterface.gif">
+                            <h4>From: Hessling, Michael Sent: Monday, May 8, 2017 4:14:48 PM</h4>
+                            <p>Tomorrow morning, I will archive clean-power-plan. Tomorrow during the day, you'll want to rename the ARCHIVED clean-power-plan back to cleanpowerplan using your Perl script.~Mike
+                            </p>
+                        </div>
+                        <div id="thirdMail" class="email" onclick="showSelected(this)" onmousedown="grabMail(this)">
+                          <img src="assets/images/webinterface.gif">
+                          <h4>From: Freire, JP Sent: Friday, April 28, 2017 5:51 PM</h4>
+                          <p>Steve, Harvey and Matt, As discussed with Nancy, we would like the content at the links below removed and archived as soon as possible.
+                            The removed climate change pages will be replaced with a custom page that will explain why the change is happening, include a link to the
+                            January 19, 2017 snapshot of the EPA website, and a link to the press release we'll be putting out.
+                            The clean power plan pages will be redirected to the newly posted energy independence pages.
+                            We appreciate your assistance in this time-sensitive matter. Please let us know if you have questions. Thank you
+                          </p>
+                        </div>
+                        <div id="fourthMail" class="email">
+                          <img src="assets/images/webinterface.gif">
+                          <h4>From: Hessling, Michael Sent: Monday, May 8, 2017 2:23:37 PM</h4>
+                          <p>I would do this archiving early in the morning and go as fast as I can. Wouldn't that prevent the indexing?
+                            The URL pattern would be "clean-power-plan" if that helps (changed from "cleanpowerplan"). ~Mike
+                          </p>
+                        </div>
+                    </div>
+                    <div id="selected">
+                      <h4 id="to"></h4>
+                      <h4 id="from"></h4>
+                      <h4 id="subject"></h4>
+                      <p id="body"></p>
+                    </div>
+                </div>
             </div>
         </div>
+        <script src="http://localhost:35729/livereload.js"></script>
         <script src="assets/javascript/script.js"></script>
         <script type="application/javascript">
-        $(document).ready(function() {
-            let color = "black", outline = "white";
-            const overlay = new Overlay(7, color, outline);
-            overlay.addContent("title", showTitle);
-            overlay.addContent("interview", showInterview);
-            overlay.addContent("critical", showCritical);
-            overlay.render(color, outline);
+    $(document).ready(function() {
+        let color = "black", outline = "white";
+        const overlay = new Overlay(7, color, outline);
+        overlay.addContent("title", showTitle);
+        overlay.addContent("interview", showInterview);
+        overlay.addContent("critical", showCritical);
+        overlay.render(color, outline);
     });
     function showTitle(){
-        main.style.display = "block";
-        document.getElementById("titleImg").style.display = "none";
-        document.getElementById("bio").style.display = "none";
-        document.getElementsByClassName("knob1")[0].style.display = "block";
-        document.getElementsByClassName("slider")[0].style.display = "block";
-        document.getElementsByClassName("button1")[0].style.display = "block";
-        document.getElementsByClassName("button2")[0].style.display = "block";
-        document.getElementsByClassName("button3")[0].style.display = "block";
-        document.getElementsByClassName("knob2")[0].style.display = "block";
+       window.location.href = "https://archive.work/";
     }
 
     function showInterview(){
-            document.getElementsByClassName("knob1")[0].style.display = "none";
-            document.getElementsByClassName("slider")[0].style.display = "none";
-            document.getElementsByClassName("button1")[0].style.display = "none";
-            document.getElementsByClassName("button2")[0].style.display = "none";
-            document.getElementsByClassName("button3")[0].style.display = "none";
-            document.getElementsByClassName("knob2")[0].style.display = "none";
-            document.getElementById("bio").style.display = "block";
+
     }
     
     function showCritical(){
-        var main = document.getElementById("main");
-        var img = document.getElementById("titleImg");
-        main.style.display = "none";
-        img.style.display = "block";
+        window.location.href = "https://epa.archive.work/";
     }
 </script>
     </body>
