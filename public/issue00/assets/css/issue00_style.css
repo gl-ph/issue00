@@ -11,6 +11,7 @@ body {
     color: blue;
     font-size: 7vh;
     overflow-x: hidden;
+    background-image: url("grainybckgd.png");
 }
 
 #issue {
