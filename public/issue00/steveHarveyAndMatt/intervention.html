@@ -127,28 +127,28 @@
                 </div>
             </div>
         </div>
-        <script src="http://localhost:35729/livereload.js"></script>
+<!--        <script src="http://localhost:35729/livereload.js"></script>-->
         <script src="assets/javascript/script.js"></script>
         <script type="application/javascript">
     $(document).ready(function() {
         let color = "black", outline = "white";
-        const overlay = new Overlay(7, color, outline);
+        const overlay = new Overlay(1, color, outline);
         overlay.addContent("title", showTitle);
-        overlay.addContent("interview", showInterview);
-        overlay.addContent("critical", showCritical);
+//        overlay.addContent("interview", showInterview);
+//        overlay.addContent("critical", showCritical);
         overlay.render(color, outline);
     });
     function showTitle(){
        window.location.href = "https://archive.work/";
     }
 
-    function showInterview(){
-
-    }
-    
-    function showCritical(){
-        window.location.href = "https://epa.archive.work/";
-    }
+//    function showInterview(){
+//
+//    }
+//    
+//    function showCritical(){
+//        window.location.href = "https://epa.archive.work/";
+//    }
 </script>
     </body>
 </html>
