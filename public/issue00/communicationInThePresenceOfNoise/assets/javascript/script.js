@@ -56,7 +56,7 @@ window.onload = function() {
     //Standard button press animation and redirect to piece
     button2.onmousedown = function(){
         buttonPress(button2);
-        window.location.href = "https://people.rit.edu/mkl8568/communicationinthepresenceofnoise/tracery-master/";
+        window.location.href = "/issue00/communicationInThePresenceOfNoise/Communication/index.html";
     };
 
     //This button turns the music on
