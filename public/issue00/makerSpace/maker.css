@@ -8,6 +8,7 @@ body{
     margin-bottom:5em;
 }
 
+
 button{
     display: block;
     border: none;
@@ -91,7 +92,7 @@ button{
     margin-bottom:2em;
 }
 
-button, a{
+button, a, a button{
     color:white;
     text-decoration: none;
 }
@@ -127,10 +128,19 @@ button, a{
     color:blue;
 }
 
+ul li{
+    list-style-type:none;
+}
 
-#email{
+#email, ul li a, p a{
     color:blue;
     font-weight: 700;
+    list-style: none;
+}
+
+
+#email:hover, ul li a:hover, p a:hover{
+    color:red;
 }
 
 

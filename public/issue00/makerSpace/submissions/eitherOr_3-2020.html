@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+    <title>either / or</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+    <style>
+        body{
+          font-family: 'Lora', serif;
+          background-color: black;
+        }
+
+        #app{
+          display: grid;
+          grid-gap: 5px;
+          grid-auto-rows: 97vh;
+          grid-template-areas:
+          "a b c";
+
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        .info{
+          width: 70vw;
+          margin: auto;
+          text-align: center;
+          color: white;
+        }
+
+        p.info{
+          font-size: 20px;
+        }
+
+        h1.info{
+          font-size: 40px;
+        }
+
+        .state{
+          font-size: 70px;
+          text-align: center;
+          align-self: center;
+          width: 32vw;
+        }
+
+        footer{
+          font-size: 17px;
+          color: white;
+        }
+
+        footer p{
+          display: inline-flex;
+        }
+
+        #doc{
+          position: absolute;
+          right: 25px;
+        }
+
+        a{
+          color: #0375B4;
+        }
+
+        a:visited{
+          color: #FF3B3F;
+        }
+
+        a:hover{
+          color: #F7B733;
+        }
+
+        @media only screen and (max-width: 600px)
+        {
+          #app{
+            display: grid;
+            grid-gap: 1px;
+            grid-auto-rows: 32vh;
+            grid-template-areas:
+            "b";
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+
+          .state{
+            font-size: 40px;
+            text-align: center;
+            margin: auto;
+            display: block;
+            width: 95vw;
+          }
+
+          p.info{
+            font-size: 14px;
+          }
+
+          h1.info{
+            font-size: 25px;
+            margin-bottom: 10px;
+          }
+
+          footer{
+            text-align: center;
+            font-size: 12px;
+          }
+        }
+</style>
+</head>
+    
+    
+<body>
+  <div id="app">
+		<p class="state" id="either">either</p>
+		<p class="state" id="slash">/</p>
+		<p class="state" id="or">or</p>
+	</div>
+
+	<br>
+	<br>
+
+	<h1 class="info">what is this?</h1>
+	<p class="info">either / or is an autobiographical interactive experience about identity, action, and choice. time progresses, thoughts shift, and people move on. click to interact.</p>
+
+	<br>
+
+	<footer>
+		<p>Copyright Brandon Dcruz 2018</p>
+		<!-- <p id="doc"><a href="documentation.html" target="_blank">Documentation</a></p> -->
+	</footer>
+
+	<script>
+            "use strict";
+
+            //All of the variables from the document
+            let either = document.querySelector("#either");
+            let slash = document.querySelector("#slash");
+            let or = document.querySelector("#or");
+            let app = document.querySelector("#app");
+
+            //Arrays for the different lexia/texts
+            let eitherTexts = [
+              "xerox every page of every book I own, every half-filled journal including scans of every blank page, wear them as blankets to get through the night",
+              "sew my lips together and never allow myself to speak aloud again, communicate only with a downward cast gaze and scuffing of toes, twirling of rings",
+              "imbibe grapes straight from the cardboard fountain until hunger leans forward and bears it's wretched t-teeth, chewing, ",
+              "incriminate myself fourteen times over, all to burn up with pride and the seconds of silence that pass into clicking of keys, averting eye contact and blinking repeatedly",
+              "weave my focus into view (my view into focus) and repeat each word as it is spoken, think in nothing more than dots & dashes (lines)",
+                "alone, gasping for air at the thought, the marks, the touch, internal scratches no one can see, soothe with a milkshake & shake away the flies with a blunt & warm beer in the morning",
+                "buy a pack of djarum blacks, wonder why no one ever mentioned that cigaretttes affect the way your body notices sparkles, sparks in my eyes and sprinkled on my fingertips",
+                "lock myself in a closet, turn off the lights, huddle and kiss my knees, feel nothing but pages & covers imprinting my skin"
+            ]
+            let slashTexts = [
+              "scribble with sharpies in my sleep and wake up panting for air in a sea of ink, stripes over stains that were left to be laundered for over a moon until its too late",
+              "my expertise lies mainly in spewing nonsense and verbal extremities, plucking all the wrong times for a rush of seeds to burst forth from dead flowers",
+              "toast",
+              "brand-brandish iron-irony to my skin-skinny arm-armament",
+              "i smoke too much flower for honors & repeatedly check my email at parties, refresh more times than people i could count, more times than i received notices of policy breaking and slipping behind in each of my unattended trials & courses",
+                "keep track of 31 names in four different places, three written in invisible ink & scarring my...",
+                "nickles devoted to nicotine, blinding as i roam but illuminating in the four corners of my space shuttle, is the door sealed off or did it ever exist",
+                "initiate a hug and spend the next six hours fretting over the circumference of my arms and how tight they managed or forced to squeeze, consider how many newtons expended and assure yourself it was exactly and precisely too much"
+            ]
+            let orTexts = [
+              "get no more than 3 hours of sleep each night and always be sure to cite your citations, take note of your notes and make flashcards archiving each set you have made",
+              "expand my vocabulary late at night, pouring over dictionaries with acid & bleach, forget every word and all that i've ever spoken by morning, speak only in riddles & pi",
+              "go to the grocery store for the first time in weeks, but be sure to wear a disguise & buy only avocadoes & beer",
+              "learn how to smile and put on a professional facade, take uncomforable photos in clothes that don't fit, stifle your sense of fun for the sake of imminent fear of the rapture",
+              "wake up, roll to make eye contact with her calendar, marvel at my ability to survive on nothing more than sex & coffee, let myself fall back into sleep for 17 additional hours, deny any requests to nourish or flourish and always be sure to empty my waterbottle, accept myself as a dehydrated vampire",
+                "text my mother & find myself between her & campus safety, one inch of divider between my ice cream & the top of his head, hair visible to me, can't unsee his voice",
+                "rigid temptation while i stare at the burning before my eyes, wait 3 years & 3 months, connect after only one hit & never return, the ashes he created even hit the lucky in the pack, my nauseau is life saving",
+                "find myself suddenly submerged in darkness, open my eyes to see my friend covering my eyes, laughing & smiling & giggling from behind"
+            ]
+
+            //An array of all the arrays of texts
+            let allTexts = [eitherTexts, slashTexts, orTexts];
+            //Array of possible starting words
+            let choice = ["either", "/", "or", "neither"];
+            //Array of colors for background
+            let posColors = ["#FF3B3F", "#0375B4", "#F7B733","#CAEBF2", "#A239CA"];
+            //Random topic/color value
+            let topic = Math.floor(Math.random() * eitherTexts.length);
+
+            let toggle = false;
+
+            tick();
+
+            either.myArray = eitherTexts;
+            either.init = 0;
+
+            slash.myArray = slashTexts;
+            slash.init = 1;
+
+            or.myArray = orTexts;
+            or.init = 2;
+
+            //Set the functions to the app words and initialize the first choice
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+            {
+              either.addEventListener("touchend", getPhrase);
+              slash.addEventListener("touchend", getPhrase);
+              or.addEventListener("touchend", getPhrase);
+            }
+            else
+            {
+              either.addEventListener("mouseover", getPhrase);
+              either.addEventListener("mouseleave", reset);
+              either.addEventListener("click", swap);
+
+              slash.addEventListener("mouseover", getPhrase);
+              slash.addEventListener("mouseleave", reset);
+              slash.addEventListener("click", swap);
+
+              or.addEventListener("mouseover", getPhrase);
+              or.addEventListener("mouseleave", reset);
+              or.addEventListener("click", swap);
+            }
+
+            //A ticking function to pass the time and cycle through the topics
+            function tick()
+            {
+              setTimeout(tick,15000);
+              topic++;
+              if(topic >= eitherTexts.length)
+              {
+                topic = 0;
+              }
+
+              //Change the background color depending on the topic
+              app.style.backgroundColor = posColors[topic];
+            }
+
+            //Gets a new lexia based off the current topic. Displays it in the hovered word
+            function getPhrase()
+            {
+              if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+              {
+                this.style.fontSize = "12px";
+                toggle = !toggle;
+              }
+              else
+              {
+                //Styles for legibility
+                this.style.fontSize = "30px";
+                this.style.cursor = "crosshair";
+              }
+
+              //The neither term does not have any associated texts
+              if(this.init == 3)
+              {
+                this.innerHTML = "neither";
+                this.style.fontSize = "70px";
+              }
+              else
+              {
+
+                if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+                {
+                  this.style.fontSize = "18px";
+
+                  if(toggle)
+                  {
+                    this.innerHTML = allTexts[this.init][topic];
+                  }
+                  else
+                  {
+                    this.innerHTML = choice[this.init];
+                    this.style.fontSize = "40px";
+                  }
+                }
+                else
+                {
+                  this.innerHTML = allTexts[this.init][topic];
+
+                  //Styles for legibility
+                  this.style.fontSize = "30px";
+                }
+              }
+            }
+
+            //When the mouse releases the word, set it back to the initial term
+            function reset()
+            {
+              this.innerHTML = choice[this.init];
+              this.style.fontSize = "70px";
+            }
+
+            //On a click, the term should cycle through terms and lexias
+            function swap()
+            {
+              this.init++;
+
+              if(this.init > 3)
+              {
+                this.init = 0;
+              }
+
+              if(this.init == 3)
+              {
+                this.innerHTML = "neither";
+
+                if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+                {
+                  this.style.fontSize = "40px";
+                }
+                else
+                {
+                  this.style.fontSize = "70px";
+                }
+              }
+              else
+              {
+                this.innerHTML = allTexts[this.init][topic];
+                if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+                {
+                  this.style.fontSize = "20px";
+                }
+                else
+                {
+                  this.style.fontSize = "30px";
+                }
+              }
+            }
+
+
+</script>
+</body>
+</html>
+
+ <!--
+
+        Created by Brandon Dcruz on 30 April 2018
+        Copyright (c) 2018 Brandon Dcruz <bvd5889@rit.edu>
+
+        Permission to use, copy, modify, and/or distribute this software for any
+        purpose with or without fee is hereby granted, provided that the above
+        copyright notice and this permission notice appear in all copies.
+
+        THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+        WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+        MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+        SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+        WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+        ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR
+        IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+        -->
+
